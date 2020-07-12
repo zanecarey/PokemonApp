@@ -6,16 +6,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PokeAPI {
 
-    private val puzzleApi: PokeInterface
+    private val pokeApi: PokeInterface
 
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com")
+            .baseUrl("https://pokeapi.co")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
 
-        puzzleApi = retrofit.create(PokeInterface::class.java)
+        pokeApi = retrofit.create(PokeInterface::class.java)
     }
 }
