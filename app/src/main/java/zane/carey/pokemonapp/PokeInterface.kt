@@ -20,12 +20,18 @@ class PokeInterface {
 data class Results(
     @SerializedName("id")
     val id: String,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("weight")
     val weight: Int,
     @SerializedName("height")
     val height: Int,
     @SerializedName("abilities")
     val abilities: List<String>,
+    @SerializedName("moves")
+    val moves: List<String>,
+    @SerializedName("stats")
+    val stats: List<String>,
     @SerializedName("species")
     val species: Int
 
