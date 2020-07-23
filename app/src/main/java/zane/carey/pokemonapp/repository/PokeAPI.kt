@@ -1,4 +1,4 @@
-package zane.carey.pokemonapp
+package zane.carey.pokemonapp.repository
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit

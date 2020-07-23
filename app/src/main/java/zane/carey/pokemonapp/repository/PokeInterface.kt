@@ -1,4 +1,4 @@
-package zane.carey.pokemonapp
+package zane.carey.pokemonapp.repository
 
 import com.google.gson.annotations.SerializedName
 import kotlinx.coroutines.Deferred
@@ -34,5 +34,4 @@ data class Results(
     val stats: List<String>,
     @SerializedName("species")
     val species: Int
-
 )
