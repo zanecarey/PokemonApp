@@ -9,11 +9,11 @@ import zane.carey.pokemonapp.model.Pokemon
 
 @Dao
 interface PokeDAO {
-    @Query("SELECT * FROM pokemon WHERE id = :id")
+    @Query("SELECT * FROM pokemon_table WHERE ID = :id")
     fun getById(id: String?): LiveData<Pokemon>
 
-    @Query("SELECT * FROM pokemon")
-    fun getAll(id: String?): LiveData<List<Pokemon>>
+    @Query("SELECT * FROM pokemon_table")
+    fun getAll(): LiveData<List<Pokemon>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(pokemon: Pokemon)
