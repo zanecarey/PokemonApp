@@ -1,4 +1,4 @@
-package zane.carey.pokemonapp.ui.ViewPager
+package zane.carey.pokemonapp.ui.PokemonEvolutions
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.fragment_poke_abilities.*
+import kotlinx.android.synthetic.main.fragment_poke_bio.*
 import zane.carey.pokemonapp.R
+import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
+import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
 
-class ViewPagerFragment : Fragment() {
+class EvolutionFragment: Fragment() {
+
+    companion object {
+        @JvmStatic
+        fun newInstance(id: String?) = StatsFragment().apply {
+            arguments = Bundle().apply {
+                putString("id", id)
+            }
+        }
+    }
 
     private lateinit var vpViewModel: ViewPagerViewModel
 
@@ -24,7 +35,7 @@ class ViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_poke_abilities, container, false)
+        return inflater.inflate(R.layout.fragment_poke_evolutions, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,9 +45,10 @@ class ViewPagerFragment : Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                abilitiesTextView.text = pokemon.abilities.toString()
-                movesTextView.text = pokemon.moves.toString()
-
+                typeTextView.text = pokemon.type.toString()
+                weightTextView.text = pokemon.weight.toString()
+                heightTextView.text = pokemon.height.toString()
+                baseXPTextView.text = pokemon.baseXP.toString()
             }
         })
     }

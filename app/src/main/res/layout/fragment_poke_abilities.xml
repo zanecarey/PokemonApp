@@ -10,36 +10,33 @@
         android:padding="12dp">
 
         <TextView
-            android:id="@+id/typeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/pokemon_type"
+            android:gravity="center"
+            android:text="@string/abilities"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/abilitiesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/pokeAbilitiesList"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/baseXPTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/base_xp"
-            android:textSize="16sp" />
+            android:gravity="center"
+            android:text="@string/learned_moves"
+            android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/weightTextView"
+            android:id="@+id/movesTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/pokemon_weight"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/heightTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/pokemon_height"
+            android:gravity="center"
+            android:text="@string/pokeLearnedMoves"
             android:textSize="16sp" />
     </LinearLayout>
-
 </androidx.core.widget.NestedScrollView>
