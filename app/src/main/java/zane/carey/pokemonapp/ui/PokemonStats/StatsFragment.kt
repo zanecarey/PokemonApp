@@ -32,13 +32,12 @@ class StatsFragment: Fragment() {
         vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_poke_search, container, false)
+        return inflater.inflate(R.layout.fragment_poke_stats, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

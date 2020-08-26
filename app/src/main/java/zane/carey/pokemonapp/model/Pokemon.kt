@@ -15,6 +15,7 @@ class Pokemon {
     var id: String? = null
     var name: String? = null
     var height: Int? = null
+    var weight: Int? = null
     var baseXP: Int? = null
     var abilities: List<String>? = null
     var attack: Int? = null

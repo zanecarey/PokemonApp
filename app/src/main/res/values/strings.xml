@@ -6,4 +6,8 @@
     <string name="special_attack">Special-Attack</string>
     <string name="special_defense">Special-Defense</string>
     <string name="speed">Speed</string>
+    <string name="pokemon_bio">Pokemon Bio</string>
+    <string name="pokemon_type">Pokemon Type</string>
+    <string name="pokemon_weight">Pokemon Weight</string>
+    <string name="pokemon_height">Pokemon Height</string>
 </resources>
