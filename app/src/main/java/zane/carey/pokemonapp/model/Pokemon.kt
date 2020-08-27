@@ -25,5 +25,8 @@ class Pokemon {
     var spAttack: Int? = null
     var spDefense: Int? = null
     var speed: Int? = null
+    var gender: String? = null
     var type: List<String>? = null
+    var flavorText: String? = null
+    var evolutionChain: List<String>? = null
 }
