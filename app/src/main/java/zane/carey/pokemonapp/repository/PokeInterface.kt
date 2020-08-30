@@ -6,18 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
 
-class PokeInterface {
-
-    interface PokeInterface {
-        @Headers("Content-Type: application/json")
-        @GET("/api/v2/pokemon/{name}/")
-        fun getData(
-            @Path("name") pokeName: String
-        ): Deferred<Results>
-    }
-}
-
-data class Results(
+data class PokemonResults(
     @SerializedName("id")
     val id: String,
     @SerializedName("name")
@@ -99,4 +88,38 @@ data class Other(
 
 data class Species(
     val name: String
+)
+
+data class PokemonColor(
+    val id: Int,
+    val name: String,
+    val pokemonSpecies: List<String>
+)
+
+data class PokemonSpecies(
+    val id: Int,
+    val name: String,
+    val order: Int,
+    val genderRate: Int,
+    val captureRate: Int,
+    val baseHappiness: Int,
+    val isBaby: Boolean,
+    val hatchCounter: Int,
+    val hasGenderDifferences: Boolean,
+    val formsSwitchable: Boolean,
+    val growthRate: NamedApiResource,
+    val pokedexNumbers: List<PokemonSpeciesDexEntry>,
+    val eggGroups: List<NamedApiResource>,
+    val color: NamedApiResource,
+    val shape: NamedApiResource,
+    val evolvesFromSpecies: NamedApiResource?,
+    val evolutionChain: ApiResource,
+    val habitat: NamedApiResource?,
+    val generation: NamedApiResource,
+    val names: List<Name>,
+    val palParkEncounters: List<PalParkEncounterArea>,
+    val formDescriptions: List<Description>,
+    val genera: List<Genus>,
+    val varieties: List<PokemonSpeciesVariety>,
+    val flavorTextEntries: List<PokemonSpeciesFlavorText>
 )
