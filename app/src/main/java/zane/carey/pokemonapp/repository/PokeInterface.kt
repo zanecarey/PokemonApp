@@ -5,6 +5,8 @@ import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
+import zane.carey.pokemonapp.model.ApiResource
+import zane.carey.pokemonapp.model.NamedApiResource
 
 data class PokemonResults(
     @SerializedName("id")
@@ -26,7 +28,7 @@ data class PokemonResults(
     @SerializedName("stats")
     val stats: List<PokemonStat>,
     @SerializedName("species")
-    val species: Species,
+    val species: NamedApiResource,
     @SerializedName("types")
     val types: List<PokemonType>,
     @SerializedName("sprites")
@@ -113,13 +115,30 @@ data class PokemonSpecies(
     val color: NamedApiResource,
     val shape: NamedApiResource,
     val evolvesFromSpecies: NamedApiResource?,
-    val evolutionChain: ApiResource,
+    //val evolutionChain: ApiResource,
     val habitat: NamedApiResource?,
     val generation: NamedApiResource,
-    val names: List<Name>,
-    val palParkEncounters: List<PalParkEncounterArea>,
-    val formDescriptions: List<Description>,
-    val genera: List<Genus>,
-    val varieties: List<PokemonSpeciesVariety>,
+    //val names: List<Name>,
+    //val palParkEncounters: List<PalParkEncounterArea>,
+    //val formDescriptions: List<Description>,
+    //val genera: List<Genus>,
+    //val varieties: List<PokemonSpeciesVariety>,
     val flavorTextEntries: List<PokemonSpeciesFlavorText>
+)
+
+data class PokemonSpeciesFlavorText(
+    val flavorText: String,
+    val language: NamedApiResource,
+    val version: NamedApiResource
+)
+
+
+data class PokemonSpeciesGender(
+    val rate: Int,
+    val pokemonSpecies: NamedApiResource
+)
+
+data class PokemonSpeciesDexEntry(
+    val entryNumber: Int,
+    val pokedex: NamedApiResource
 )
