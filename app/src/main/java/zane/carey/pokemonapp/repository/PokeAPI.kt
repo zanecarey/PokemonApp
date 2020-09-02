@@ -4,18 +4,23 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PokeAPI {
+object PokeAPI {
 
-    private val pokeApi: PokeInterface
+    private val retrofit = Retrofit.Builder()
+        .baseUrl("https://pokeapi.co")
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(CoroutineCallAdapterFactory())
+        .build()
 
+    val pokemonService: PokeInterfaceService = retrofit.create(PokeInterfaceService::class.java)
 
-    init {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co")
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .build()
-
-        pokeApi = retrofit.create(PokeInterface::class.java)
-    }
+//    init {
+//        val retrofit = Retrofit.Builder()
+//            .baseUrl("https://pokeapi.co")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+//            .build()
+//
+//        pokeApi = retrofit.create(PokeInterface::class.java)
+//    }
 }

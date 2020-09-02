@@ -28,15 +28,47 @@
                 android:layout_height="200dp"
                 >
 
-                <TextView
-                    android:id="@+id/pokemonNameTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
-                    android:text="PokemonName" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp">
+
+                    <TextView
+                        android:id="@+id/pokemonNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:text="PokemonName" />
+
+                    <TextView
+                        android:id="@+id/IDTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:alpha="0.5"
+                        android:gravity="top"
+                        android:textColor="#FFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewType1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:textColor="#fff"
+                        android:textSize="14sp"
+                         />
+                </RelativeLayout>
+
             </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
@@ -46,6 +78,7 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/pagerTabs"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:tabGravity="fill"

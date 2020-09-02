@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.fragment_poke_abilities.*
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_viewpager.*
 import zane.carey.pokemonapp.R
 
 class ViewPagerFragment : Fragment() {
@@ -24,7 +25,7 @@ class ViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_poke_abilities, container, false)
+        return inflater.inflate(R.layout.fragment_viewpager, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,9 +35,24 @@ class ViewPagerFragment : Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                abilitiesTextView.text = pokemon.abilities.toString()
-                movesTextView.text = pokemon.moves.toString()
+                pokemonNameTextView.text = pokemon.abilities.toString()
+                IDTextView.text = pokemon.moves.toString()
 
+                pokemon.type.let{ firstType ->
+                    textViewType1.text = firstType.toString()
+
+                }
+
+                Glide.with(view.context)
+                    .load(pokemon.sprites?.get(0))
+                    .placeholder(android.R.color.transparent)
+                    .into(pokemonImageView)
+
+                val viewPager = viewPager
+                val pagerTabs = pagerTabs
+                viewPager.adapter =
+                    ViewPagerAdapter(requireFragmentManager(), requireContext(), pokemon.id!!)
+                pagerTabs.setupWithViewPager(viewPager)
             }
         })
     }

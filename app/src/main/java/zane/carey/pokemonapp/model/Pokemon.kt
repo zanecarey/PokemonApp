@@ -29,4 +29,5 @@ class Pokemon {
     var type: List<String>? = null
     var flavorText: String? = null
     var evolutionChain: List<String>? = null
+    var sprites: List<String>? = null
 }

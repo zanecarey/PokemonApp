@@ -6,7 +6,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import zane.carey.pokemonapp.model.EvolutionChain
 
-internal interface PokeInterfaceService {
+interface PokeInterfaceService {
 
     @GET("pokemon/{id}/")
     fun getPokemon(@Path("id") id: Int): Deferred<PokemonResults>
