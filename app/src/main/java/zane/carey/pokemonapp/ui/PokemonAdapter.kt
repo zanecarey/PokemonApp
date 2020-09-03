@@ -5,17 +5,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.poke_list_item.view.*
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Pokemon
 
-class PokemonAdapter(val pokeList: List<Pokemon>, val context: Context) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>(){
+class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: Context) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>(){
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        fun bindView(item: Pokemon) {
+
+            itemView.pokemonName.text = item.name
+            itemView.type1.text = item.type?.get(0)
+
+            Glide.with(itemView.context)
+                .load(item.sprites?.get(0))
+                .placeholder(android.R.color.transparent)
+                .into(itemView.pokemonImage)
+        }
 
 
-
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.poke_list_item, parent, false))
+        val view = LayoutInflater.from(context).inflate(R.layout.poke_list_item, parent, false)
+
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -23,13 +39,12 @@ class PokemonAdapter(val pokeList: List<Pokemon>, val context: Context) : Recycl
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = pokeList[position]
+
+        holder.bindView(item)
+
+
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val name = view.pokemonName
-        val type1 = view.type1
-        val type2 = view.type2
-    }
 }

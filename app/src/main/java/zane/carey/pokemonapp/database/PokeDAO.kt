@@ -1,10 +1,7 @@
 package zane.carey.pokemonapp.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import zane.carey.pokemonapp.model.Pokemon
 
 @Dao
@@ -17,4 +14,10 @@ interface PokeDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(pokemon: Pokemon)
+
+    @Query("DELETE FROM pokemon_table")
+    fun deleteAll()
+
+    @Delete
+    fun delete(model: Pokemon)
 }
