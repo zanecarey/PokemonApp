@@ -1,36 +1,54 @@
 package zane.carey.pokemonapp.ui
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.database.PokeDAO
-import zane.carey.pokemonapp.database.PokeDatabase
 import zane.carey.pokemonapp.model.Pokemon
-import zane.carey.pokemonapp.repository.PokeRepository
+import zane.carey.pokemonapp.repository.PokeAPI
+import zane.carey.pokemonapp.repository.PokemonResults
+import kotlin.concurrent.thread
 
-class PokemonViewModel(application: Application): AndroidViewModel(application) {
+class PokemonViewModel: ViewModel() {
 
-    private val repository: PokeRepository
     private val pokeDAO: PokeDAO = App.database.pokeDao()
 
-    val allPokemon: LiveData<List<Pokemon>>
 
     init {
-        //val pokeDAO = PokeDatabase.getDatabase(application).pokeDao()
-        repository = PokeRepository(pokeDAO)
-        allPokemon = repository.allPokemon
+        initNetworkRequest()
     }
 
-    fun insert(pokemon: Pokemon) = viewModelScope.launch(Dispatchers.IO) {
-        repository.insert(pokemon)
+    private fun initNetworkRequest() {
+
+        val call = PokeAPI.pokemonService.getPokemon(1)
+        call.enqueue(object : Callback<PokemonResults?> {
+
+            override fun onResponse(
+                call: Call<PokemonResults?>,
+                response: Response<PokemonResults?>
+            ) {
+                response.body()?.let { pokemons: PokemonResults ->
+                    thread {
+                        pokeDAO.insert(pokemons)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<PokemonResults?>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+
     }
+
 
     fun getPokemonList(): LiveData<List<Pokemon>> {
         return pokeDAO.getAll()
     }
 }
+

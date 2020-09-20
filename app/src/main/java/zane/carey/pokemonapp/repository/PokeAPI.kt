@@ -13,14 +13,4 @@ object PokeAPI {
         .build()
 
     val pokemonService: PokeInterfaceService = retrofit.create(PokeInterfaceService::class.java)
-
-//    init {
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl("https://pokeapi.co")
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-//            .build()
-//
-//        pokeApi = retrofit.create(PokeInterface::class.java)
-//    }
 }

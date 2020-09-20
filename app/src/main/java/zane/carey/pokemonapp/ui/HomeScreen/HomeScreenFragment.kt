@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import zane.carey.pokemonapp.R
+import zane.carey.pokemonapp.model.Category
 import zane.carey.pokemonapp.ui.PokemonViewModel
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
+import java.util.*
 
 class HomeScreenFragment: Fragment() {
 
@@ -37,5 +40,9 @@ class HomeScreenFragment: Fragment() {
 
         categoryRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
+        homeScreenViewModel.getListMenu().observe(viewLifecycleOwner, Observer {
+            val items: List<Category> = it
+            categoryRecyclerView.adapter = CategoryAdapter(items, view.context)
+        })
     }
 }

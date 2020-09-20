@@ -3,6 +3,7 @@ package zane.carey.pokemonapp.database
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import zane.carey.pokemonapp.model.Pokemon
+import zane.carey.pokemonapp.repository.PokemonResults
 
 @Dao
 interface PokeDAO {
@@ -13,7 +14,7 @@ interface PokeDAO {
     fun getAll(): LiveData<List<Pokemon>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(pokemon: Pokemon)
+    fun insert(pokemon: PokemonResults)
 
     @Query("DELETE FROM pokemon_table")
     fun deleteAll()
