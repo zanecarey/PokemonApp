@@ -8,24 +8,31 @@
         android:id="@+id/navigation_main"
         android:name="zane.carey.pokemonapp.ui.HomeScreen.HomeScreenFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_main_screen">
+        tools:layout="@layout/fragment_home_screen">
         <action
-            android:id="@+id/action_navigation_main_to_navigation_pokedex"/>
+            android:id="@+id/action_navigation_main_to_navigation_pokemon"
+            app:destination="@id/navigation_pokemon"/>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_pokemon"
-        android:name="zane.carey.pokemonapp.ui.PokemonSearch.SearchFragment"
+        android:name="zane.carey.pokemonapp.ui.PokemonFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_pokemon" >
-<!--        <action-->
-<!--            android:id="@+id/action_navigation_pokedex_to_navigation_dashboard"-->
-<!--            app:destination="@id/navigation_dashboard" />-->
+        <action
+            android:id="@+id/action_navigation_pokemon_to_navigation_viewpager"
+            app:destination="@id/navigation_viewpager" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigatin_search"
+        android:id="@+id/navigation_search"
         android:name="zane.carey.pokemonapp.ui.PokemonSearch.SearchFragment"
         tools:layout="@layout/fragment_poke_search"/>
+
+    <fragment
+        android:id="@+id/navigation_viewpager"
+        android:name="zane.carey.pokemonapp.ui.ViewPager.ViewPagerFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_viewpager" />
 
 </navigation>

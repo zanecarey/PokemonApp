@@ -56,7 +56,7 @@
             app:layoutManager="GridLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:itemCount="6"
-            tools:listitem="@layout/poke_list_item"
+            tools:listitem="@layout/category_list_item"
             tools:spanCount="2" />
 
     </androidx.core.widget.NestedScrollView>
