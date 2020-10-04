@@ -14,7 +14,7 @@ interface PokeDAO {
     fun getAll(): LiveData<List<Pokemon>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(pokemon: PokemonResults)
+    fun insert(pokemon: Pokemon)
 
     @Query("DELETE FROM pokemon_table")
     fun deleteAll()

@@ -14,7 +14,7 @@ import zane.carey.pokemonapp.repository.PokeAPI
 import zane.carey.pokemonapp.repository.PokemonResults
 import kotlin.concurrent.thread
 
-class PokemonViewModel: ViewModel() {
+class PokemonViewModel : ViewModel() {
 
     private val pokeDAO: PokeDAO = App.database.pokeDao()
 
@@ -34,7 +34,7 @@ class PokemonViewModel: ViewModel() {
             ) {
                 response.body()?.let { pokemons: PokemonResults ->
                     thread {
-                        pokeDAO.insert(pokemons)
+                        pokeDAO.insert(convert(pokemons))
                     }
                 }
             }
@@ -49,6 +49,29 @@ class PokemonViewModel: ViewModel() {
 
     fun getPokemonList(): LiveData<List<Pokemon>> {
         return pokeDAO.getAll()
+    }
+
+    fun convert(pokemonResults: PokemonResults): Pokemon {
+        return Pokemon(
+            pokemonResults.id,
+            pokemonResults.name,
+            pokemonResults.height,
+            pokemonResults.weight,
+            pokemonResults.baseExperience,
+            listOf(pokemonResults.abilities[0].ability.name),
+            listOf(pokemonResults.moves[0].move.name),
+            pokemonResults.stats[0].baseStat,
+            pokemonResults.stats[1].baseStat,
+            pokemonResults.stats[2].baseStat,
+            pokemonResults.stats[3].baseStat,
+            pokemonResults.stats[4].baseStat,
+            pokemonResults.stats[5].baseStat,
+            //pokemonResults.gender
+            pokemonResults.types[0].type.type
+            //listOf(pokemonResults.sprites.backDefault)
+        )
+
+
     }
 }
 
