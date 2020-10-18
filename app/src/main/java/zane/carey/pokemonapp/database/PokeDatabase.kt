@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import zane.carey.pokemonapp.model.Pokemon
 
-@Database(entities = [Pokemon::class], version = 1)
+@Database(entities = [Pokemon::class], version = 1, exportSchema = false)
 abstract class PokeDatabase: RoomDatabase() {
 
     abstract fun pokeDao(): PokeDAO

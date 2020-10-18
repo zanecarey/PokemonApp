@@ -24,7 +24,7 @@ class CategoryAdapter(
             itemView.categoryName.text = item.name
 
             itemView.setOnClickListener {
-                //it.findNavController().navigate(R.id.action_navigation_home_to_navigation_pokedex)
+                it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
             }
         }
     }
