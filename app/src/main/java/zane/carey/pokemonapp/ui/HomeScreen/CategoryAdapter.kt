@@ -23,8 +23,24 @@ class CategoryAdapter(
 
             itemView.categoryName.text = item.name
 
+
             itemView.setOnClickListener {
-                it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
+                if(item.id == 1){//Pokedex
+
+                    it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
+                } else if(item.id == 2){//Generation
+
+                } else if(item.id == 3){//Types
+
+                } else if(item.id == 4){//Locations
+
+                } else if(item.id == 5){//Moves
+
+                } else if(item.id == 6){//Items
+
+                }
+
+
             }
         }
     }
