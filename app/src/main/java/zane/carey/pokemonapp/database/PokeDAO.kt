@@ -7,7 +7,7 @@ import zane.carey.pokemonapp.repository.PokemonResults
 
 @Dao
 interface PokeDAO {
-    @Query("SELECT * FROM pokemon_table WHERE ID = :id")
+    @Query("SELECT * FROM pokemon_table WHERE pokemon = :id")
     fun getById(id: String?): LiveData<Pokemon>
 
     @Query("SELECT * FROM pokemon_table")

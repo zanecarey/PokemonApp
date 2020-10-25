@@ -4,12 +4,16 @@ import androidx.annotation.NonNull
 import androidx.room.*
 
 import retrofit2.Converter
+import zane.carey.pokemonapp.util.StringConverter
 
 
 @Entity(tableName = "pokemon_table")
-@TypeConverters(Converter::class)
-data class Pokemon(@PrimaryKey @ColumnInfo(name = "pokemon")
-    var id: String? = null,
+@TypeConverters(StringConverter::class)
+data class Pokemon(
+    @ColumnInfo(name = "pokemon")
+    @PrimaryKey
+    @NonNull
+    var id: String,
     var name: String? = null,
     var height: Int? = null,
     var weight: Int? = null,
