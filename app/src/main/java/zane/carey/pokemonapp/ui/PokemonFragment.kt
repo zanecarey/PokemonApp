@@ -30,19 +30,19 @@ class PokemonFragment: Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_poke_search, container, false)
+        return inflater.inflate(R.layout.fragment_pokemon, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pokemonRecyclerView = recyclerView
+        val pokemonRecyclerView = pokedexRecyclerView
         val layoutManager = GridLayoutManager(context, 2)
         pokemonRecyclerView.layoutManager = layoutManager
 
         pokeViewModel.getPokemonList().observe(viewLifecycleOwner, Observer {
             val pokemons: List<Pokemon> = it
-            recyclerView.adapter = PokemonAdapter(pokemons, view.context)
+            pokedexRecyclerView.adapter = PokemonAdapter(pokemons, view.context)
         })
     }
 }
