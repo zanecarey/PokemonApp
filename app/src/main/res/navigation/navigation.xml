@@ -15,7 +15,7 @@
             app:destination="@id/navigation_pokemon"/>
         <action
             android:id="@+id/action_navigation_main_to_navigation_types"
-            app:destination="@id/navigation_pokemon"/>
+            app:destination="@id/navigation_types"/>
     </fragment>
 
     <fragment

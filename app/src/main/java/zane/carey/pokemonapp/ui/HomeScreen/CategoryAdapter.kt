@@ -31,6 +31,7 @@ class CategoryAdapter(
                 } else if(item.id == 2){//Generation
 
                 } else if(item.id == 3){//Types
+                    it.findNavController().navigate(R.id.action_navigation_main_to_navigation_types)
 
                 } else if(item.id == 4){//Locations
 
