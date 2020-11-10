@@ -37,8 +37,8 @@ class TypesAdapter(val types: List<Type>, val context: Context) : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.category_list_item, parent, false)
-        return TypesAdapter.ViewHolder(view)
+        val view = LayoutInflater.from(context).inflate(R.layout.types_list_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

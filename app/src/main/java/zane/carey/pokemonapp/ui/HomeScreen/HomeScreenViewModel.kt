@@ -18,11 +18,11 @@ class HomeScreenViewModel : ViewModel() {
     fun getListMenu(): LiveData<List<Category>> {
         listMenu.value = listOf(
             Category(1, "Pokemon", R.color.red),
-            Category(1, "Generation", R.color.green),
-            Category(1, "Types", R.color.blue),
-            Category(1, "Locations", R.color.orange),
-            Category(1, "Pokemon", R.color.purple),
-            Category(1, "Items", R.color.yellow)
+            Category(2, "Generation", R.color.green),
+            Category(3, "Types", R.color.blue),
+            Category(4, "Locations", R.color.orange),
+            Category(5, "Pokemon", R.color.purple),
+            Category(6, "Items", R.color.yellow)
         )
         return listMenu
     }

@@ -8,6 +8,7 @@ import zane.carey.pokemonapp.model.Category
 import zane.carey.pokemonapp.model.Type
 
 class TypesViewModel : ViewModel() {
+
     private val listTypes = MutableLiveData<List<Type>>()
 
     fun getListTypes(): LiveData<List<Type>> {

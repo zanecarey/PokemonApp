@@ -11,7 +11,7 @@ import zane.carey.pokemonapp.model.EvolutionChain
 interface PokeInterfaceService {
 
     @GET("pokemon/{id}/")
-    fun getPokemon(@Path("id") id: Int): Call<PokemonResults>
+    fun getPokemon(@Path("id") id: Int): Deferred<PokemonResults>
 
     @GET("pokemon-color/{id}/")
     fun getPokemonColor(@Path("id") id: Int): Deferred<PokemonColor>

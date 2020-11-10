@@ -30,9 +30,9 @@
 
     <fragment
         android:id="@+id/navigation_types"
-        android:name="zane.carey.pokemonapp.ui.PokemonFragment"
+        android:name="zane.carey.pokemonapp.ui.types.TypesFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_pokemon" >
+        tools:layout="@layout/fragment_types" >
         <action
             android:id="@+id/action_navigation_pokemon_to_navigation_viewpager"
             app:destination="@id/navigation_viewpager" />
