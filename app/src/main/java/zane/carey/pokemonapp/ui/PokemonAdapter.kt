@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.poke_list_item.view.*
@@ -17,6 +19,12 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
         fun bindView(item: Pokemon) {
 
             itemView.pokemonName.text = item.name
+            itemView.setOnClickListener{
+                var idBundle = bundleOf("id" to item.id)
+
+                it.findNavController()
+                    .navigate(R.id.action_navigation_pokemon_to_navigation_viewpager, idBundle)
+            }
             //itemView.type1.text = item.type?.get(0)
 
 //            Glide.with(itemView.context)

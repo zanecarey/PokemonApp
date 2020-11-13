@@ -47,15 +47,10 @@ class PokemonFragment: Fragment(){
         val layoutManager = GridLayoutManager(context, 2)
         pokemonRecyclerView.layoutManager = layoutManager
 
-
         pokeViewModel.testGet()
         pokeViewModel.getPokemonList().observe(viewLifecycleOwner, Observer {
             val pokemons: List<Pokemon> = it
             pokedexRecyclerView.adapter = PokemonAdapter(pokemons, view.context)
         })
-//        pokeViewModel.firstPoke.observe(viewLifecycleOwner, Observer {
-//            val pokemons: PokemonResults = it
-//            pokedexRecyclerView.adapter = PokemonAdapter(listOf(convert(pokemons)), view.context)
-//        })
     }
 }

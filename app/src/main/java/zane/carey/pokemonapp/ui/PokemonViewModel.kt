@@ -67,16 +67,7 @@ class PokemonViewModel : ViewModel() {
             //emit(returnedPoke)
         }
     }
-    fun firstPoke() = liveData(Dispatchers.IO) {
-        var returnedPoke = getPoke(3)
-        pokeDAO.insert(convert(returnedPoke))
-        returnedPoke = getPoke(4)
-        pokeDAO.insert(convert(returnedPoke))
-        returnedPoke = getPoke(5)
-        pokeDAO.insert(convert(returnedPoke))
-        //pokeDAO.insert(Pokemon("1", "Bulbasaur", 7, 69, 64))
-        emit(returnedPoke)
-    }
+
     fun getPokemonList(): LiveData<List<Pokemon>> {
         return pokeDAO.getAll()
     }
