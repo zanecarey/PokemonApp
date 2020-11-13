@@ -17,12 +17,12 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
         fun bindView(item: Pokemon) {
 
             itemView.pokemonName.text = item.name
-            itemView.type1.text = item.type?.get(0)
+            //itemView.type1.text = item.type?.get(0)
 
-            Glide.with(itemView.context)
-                .load(item.sprites?.get(0))
-                .placeholder(android.R.color.transparent)
-                .into(itemView.pokemonImage)
+//            Glide.with(itemView.context)
+//                .load(item.sprites?.get(0))
+//                .placeholder(android.R.color.transparent)
+//                .into(itemView.pokemonImage)
         }
 
 

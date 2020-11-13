@@ -7,16 +7,16 @@ import zane.carey.pokemonapp.repository.PokemonResults
 
 @Dao
 interface PokeDAO {
-    @Query("SELECT * FROM pokemon_table WHERE pokemon = :id")
+    @Query("SELECT * FROM pokemon WHERE id = :id")
     fun getById(id: String?): LiveData<Pokemon>
 
-    @Query("SELECT * FROM pokemon_table")
+    @Query("SELECT * FROM pokemon")
     fun getAll(): LiveData<List<Pokemon>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(pokemon: Pokemon)
 
-    @Query("DELETE FROM pokemon_table")
+    @Query("DELETE FROM pokemon")
     fun deleteAll()
 
     @Delete

@@ -47,8 +47,8 @@ class AbilitiesFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                abilitiesTextView.text = pokemon.abilities.toString()
-                movesTextView.text = pokemon.moves.toString()
+                //abilitiesTextView.text = pokemon.abilities.toString()
+                //movesTextView.text = pokemon.moves.toString()
 
             }
         })

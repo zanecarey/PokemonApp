@@ -3,9 +3,12 @@ package zane.carey.pokemonapp.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
+import kotlinx.android.synthetic.main.fragment_pokemon.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.database.PokeDAO
@@ -19,34 +22,61 @@ class PokemonViewModel : ViewModel() {
     private val pokeDAO: PokeDAO = App.database.pokeDao()
 
 
-    init {
-        initNetworkRequest()
-    }
+//    init {
+//        firstPoke()
+//    }
 
     private fun initNetworkRequest() {
 
-        val call = PokeAPI.pokemonService.getPokemon(1)
-        call.enqueue(object : Callback<PokemonResults?> {
+//        val call = PokeAPI.pokemonService.getPokemon(1)
+//        call.enqueue(object : Callback<PokemonResults?> {
+//
+//            override fun onResponse(
+//                call: Call<PokemonResults?>,
+//                response: Response<PokemonResults?>
+//            ) {
+//                response.body()?.let { pokemons: PokemonResults ->
+//                    thread {
+//                        pokeDAO.insert(convert(pokemons))
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<PokemonResults?>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//        })
 
-            override fun onResponse(
-                call: Call<PokemonResults?>,
-                response: Response<PokemonResults?>
-            ) {
-                response.body()?.let { pokemons: PokemonResults ->
-                    thread {
-                        pokeDAO.insert(convert(pokemons))
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<PokemonResults?>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
+//        val firstPoke = liveData(Dispatchers.IO) {
+//            val returnedPoke = getPoke(1)
+//            pokeDAO.insert(convert(returnedPoke.body()!!))
+//            emit(returnedPoke)
+//        }
 
     }
 
-
+    fun testGet() {
+        viewModelScope.launch(Dispatchers.IO) {
+            var returnedPoke = getPoke(3)
+            pokeDAO.insert(convert(returnedPoke))
+            returnedPoke = getPoke(4)
+            pokeDAO.insert(convert(returnedPoke))
+            returnedPoke = getPoke(5)
+            pokeDAO.insert(convert(returnedPoke))
+            //pokeDAO.insert(Pokemon("1", "Bulbasaur", 7, 69, 64))
+            //emit(returnedPoke)
+        }
+    }
+    fun firstPoke() = liveData(Dispatchers.IO) {
+        var returnedPoke = getPoke(3)
+        pokeDAO.insert(convert(returnedPoke))
+        returnedPoke = getPoke(4)
+        pokeDAO.insert(convert(returnedPoke))
+        returnedPoke = getPoke(5)
+        pokeDAO.insert(convert(returnedPoke))
+        //pokeDAO.insert(Pokemon("1", "Bulbasaur", 7, 69, 64))
+        emit(returnedPoke)
+    }
     fun getPokemonList(): LiveData<List<Pokemon>> {
         return pokeDAO.getAll()
     }
@@ -58,8 +88,8 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.height,
             pokemonResults.weight,
             pokemonResults.baseExperience,
-            listOf(pokemonResults.abilities[0].ability.name),
-            listOf(pokemonResults.moves[0].move.name),
+            //listOf(pokemonResults.abilities[0].ability.name),
+            //listOf(pokemonResults.moves[0].move.name),
             pokemonResults.stats[0].baseStat,
             pokemonResults.stats[1].baseStat,
             pokemonResults.stats[2].baseStat,
@@ -73,5 +103,7 @@ class PokemonViewModel : ViewModel() {
 
 
     }
+
+    suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
 }
 
