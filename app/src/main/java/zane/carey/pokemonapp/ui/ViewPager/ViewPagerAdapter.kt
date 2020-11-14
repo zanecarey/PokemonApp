@@ -21,21 +21,17 @@ class ViewPagerAdapter (
 
     private val pages = listOf(
         Page(
-            context.getString(R.string.bio),
-            { BioFragment.newInstance(pokemonId) }
-        ),
+            context.getString(R.string.bio)
+        ) { BioFragment.newInstance(pokemonId) },
         Page(
-            context.getString(R.string.stats),
-            { StatsFragment.newInstance(pokemonId) }
-        ),
+            context.getString(R.string.stats)
+        ) { StatsFragment.newInstance(pokemonId) },
         Page(
-            context.getString(R.string.evolutions),
-            { EvolutionFragment() }
-        ),
+            context.getString(R.string.evolutions)
+        ) { EvolutionFragment() },
         Page(
-            context.getString(R.string.abilities),
-            { AbilitiesFragment() }
-        )
+            context.getString(R.string.abilities)
+        ) { AbilitiesFragment() }
     )
 
     override fun getCount(): Int {

@@ -16,7 +16,7 @@ class EvolutionFragment: Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(id: String?) = StatsFragment().apply {
+        fun newInstance(id: String?) = EvolutionFragment().apply {
             arguments = Bundle().apply {
                 putString("id", id)
             }

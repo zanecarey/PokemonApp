@@ -18,7 +18,7 @@ class AbilitiesFragment: Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(id: String?) = StatsFragment().apply {
+        fun newInstance(id: String?) = AbilitiesFragment().apply {
             arguments = Bundle().apply {
                 putString("id", id)
             }
