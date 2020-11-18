@@ -15,11 +15,11 @@ interface PokeInterfaceService {
     suspend fun getPokemon(@Path("id") id: Int): PokemonResults
 
     @GET("pokemon-color/{id}/")
-    fun getPokemonColor(@Path("id") id: Int): Deferred<PokemonColor>
+    fun getPokemonColor(@Path("id") id: Int): PokemonColor
 
     @GET("evolution-chain/{id}")
-    fun getEvolutionChain(@Path("id") id: Int): Deferred<EvolutionChain>
+    fun getEvolutionChain(@Path("id") id: Int): EvolutionChain
 
     @GET("pokemon-species/{id}/")
-    fun getPokemonSpecies(@Path("id") id: Int): Deferred<PokemonSpecies>
+    fun getPokemonSpecies(@Path("id") id: Int): PokemonSpecies
 }

@@ -88,10 +88,6 @@ data class Other(
     val officialArtwork: String
 )
 
-data class Species(
-    val name: String
-)
-
 data class PokemonColor(
     val id: Int,
     val name: String,
@@ -106,6 +102,7 @@ data class PokemonSpecies(
     val captureRate: Int,
     val baseHappiness: Int,
     val isBaby: Boolean,
+    val isLegendary: Boolean,
     val hatchCounter: Int,
     val hasGenderDifferences: Boolean,
     val formsSwitchable: Boolean,
@@ -118,11 +115,8 @@ data class PokemonSpecies(
     //val evolutionChain: ApiResource,
     val habitat: NamedApiResource?,
     val generation: NamedApiResource,
-    //val names: List<Name>,
-    //val palParkEncounters: List<PalParkEncounterArea>,
     //val formDescriptions: List<Description>,
-    //val genera: List<Genus>,
-    //val varieties: List<PokemonSpeciesVariety>,
+    val genera: List<Genus>,
     val flavorTextEntries: List<PokemonSpeciesFlavorText>
 )
 
@@ -130,12 +124,6 @@ data class PokemonSpeciesFlavorText(
     val flavorText: String,
     val language: NamedApiResource,
     val version: NamedApiResource
-)
-
-
-data class PokemonSpeciesGender(
-    val rate: Int,
-    val pokemonSpecies: NamedApiResource
 )
 
 data class PokemonSpeciesDexEntry(

@@ -14,6 +14,7 @@ import zane.carey.pokemonapp.util.StringConverter
     @NonNull
     var id: String,
     var name: String? = null,
+    var generation: Int? = null,
     var height: Int? = null,
     var weight: Int? = null,
     var baseXP: Int? = null,
@@ -24,10 +25,18 @@ import zane.carey.pokemonapp.util.StringConverter
     var spDefense: Int? = null,
     var speed: Int? = null,
     var gender: String? = null,
-    var flavorText: String? = null
-    //var type: List<String>? = null,
-    //var evolutionChain: List<String>? = null,
-    //var sprites: List<String>? = null,
-    //var abilities: List<String>? = null,
-    //var moves: List<String>? = null
+    var flavorText: String? = null,
+    var type: List<String>? = null,
+    var evolutionChain: List<String>? = null,
+    var sprites: List<String>? = null,
+    var abilities: List<String>? = null,
+    var moves: List<String>? = null,
+    var genderRate: Int? = null,
+    var captureRate: Int? = null,
+    var baseHappiness: Int? = null,
+    var isLegendary: Boolean? = null,
+    var growthRate: Int? = null,
+    var color: String? = null,
+    var shape: String? = null,
+    var habitat: String? = null
 )

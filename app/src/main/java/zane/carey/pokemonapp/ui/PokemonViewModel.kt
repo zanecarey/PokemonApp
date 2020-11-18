@@ -15,6 +15,7 @@ import zane.carey.pokemonapp.database.PokeDAO
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.repository.PokeAPI
 import zane.carey.pokemonapp.repository.PokemonResults
+import zane.carey.pokemonapp.repository.PokemonSpecies
 import kotlin.concurrent.thread
 
 class PokemonViewModel : ViewModel() {
@@ -58,13 +59,13 @@ class PokemonViewModel : ViewModel() {
     fun testGet() {
         viewModelScope.launch(Dispatchers.IO) {
             var returnedPoke = getPoke(3)
-            pokeDAO.insert(convert(returnedPoke))
-            returnedPoke = getPoke(4)
-            pokeDAO.insert(convert(returnedPoke))
-            returnedPoke = getPoke(5)
-            pokeDAO.insert(convert(returnedPoke))
-            //pokeDAO.insert(Pokemon("1", "Bulbasaur", 7, 69, 64))
-            //emit(returnedPoke)
+//            returnedPoke = getPoke(4)
+//            pokeDAO.insert(convert(returnedPoke))
+//            returnedPoke = getPoke(5)
+//            pokeDAO.insert(convert(returnedPoke))
+            //Get the rest of the pokemon info
+            var extraInfo = getExtraPokeInfo(3)
+            pokeDAO.insert(convert(returnedPoke,extraInfo))
         }
     }
 
@@ -72,7 +73,7 @@ class PokemonViewModel : ViewModel() {
         return pokeDAO.getAll()
     }
 
-    fun convert(pokemonResults: PokemonResults): Pokemon {
+    fun convert(pokemonResults: PokemonResults, pokemonSpecies: PokemonSpecies): Pokemon {
         return Pokemon(
             pokemonResults.id,
             pokemonResults.name,
@@ -86,9 +87,9 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.stats[2].baseStat,
             pokemonResults.stats[3].baseStat,
             pokemonResults.stats[4].baseStat,
-            pokemonResults.stats[5].baseStat,
+            pokemonResults.stats[5].baseStat
             //pokemonResults.gender
-            pokemonResults.types[0].type.type
+            //pokemonResults.types[0].type.type
             //listOf(pokemonResults.sprites.backDefault)
         )
 
@@ -96,5 +97,6 @@ class PokemonViewModel : ViewModel() {
     }
 
     suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
+    suspend fun getExtraPokeInfo(id : Int) = PokeAPI.pokemonService.getPokemonSpecies(id)
 }
 

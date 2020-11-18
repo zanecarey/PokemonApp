@@ -28,10 +28,10 @@ class ViewPagerAdapter (
         ) { StatsFragment.newInstance(pokemonId) },
         Page(
             context.getString(R.string.evolutions)
-        ) { EvolutionFragment() },
+        ) { EvolutionFragment.newInstance(pokemonId) },
         Page(
             context.getString(R.string.abilities)
-        ) { AbilitiesFragment() }
+        ) { AbilitiesFragment.newInstance(pokemonId) }
     )
 
     override fun getCount(): Int {
