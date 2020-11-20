@@ -18,8 +18,8 @@ interface PokeInterfaceService {
     fun getPokemonColor(@Path("id") id: Int): PokemonColor
 
     @GET("evolution-chain/{id}")
-    fun getEvolutionChain(@Path("id") id: Int): EvolutionChain
+    suspend fun getEvolutionChain(@Path("id") id: Int): EvolutionChain
 
     @GET("pokemon-species/{id}/")
-    fun getPokemonSpecies(@Path("id") id: Int): PokemonSpecies
+    suspend fun getPokemonSpecies(@Path("id") id: Int): PokemonSpecies
 }

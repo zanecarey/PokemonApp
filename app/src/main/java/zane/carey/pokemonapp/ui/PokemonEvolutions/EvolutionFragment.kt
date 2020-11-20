@@ -46,9 +46,9 @@ class EvolutionFragment: Fragment() {
             pokemonValue?.let { pokemon ->
 
                 //typeTextView.text = pokemon.type.toString()
-                weightTextView.text = pokemon.weight.toString()
-                heightTextView.text = pokemon.height.toString()
-                baseXPTextView.text = pokemon.baseXP.toString()
+//                weightTextView.text = pokemon.weight.toString()
+//                heightTextView.text = pokemon.height.toString()
+//                baseXPTextView.text = pokemon.baseXP.toString()
             }
         })
     }

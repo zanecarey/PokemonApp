@@ -40,6 +40,14 @@
             android:layout_marginTop="8dp"
             android:text="@string/pokemon_height"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/bioTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pokemon_flavor_text"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

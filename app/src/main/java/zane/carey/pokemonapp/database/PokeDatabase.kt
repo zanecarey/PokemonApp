@@ -8,8 +8,7 @@ import androidx.room.TypeConverters
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.util.StringConverter
 
-@Database(entities = [Pokemon::class], version = 6, exportSchema = false)
-@TypeConverters(StringConverter::class)
+@Database(entities = [Pokemon::class], version = 7, exportSchema = false)
 abstract class PokeDatabase: RoomDatabase() {
 
     abstract fun pokeDao(): PokeDAO

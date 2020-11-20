@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_poke_bio.*
+import kotlinx.android.synthetic.main.fragment_viewpager.*
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
@@ -46,7 +47,8 @@ class BioFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                //typeTextView.text = pokemon.type.toString()
+                bioTextView.text = pokemon.flavorText
+                typeTextView.text = pokemon.type.toString()
                 weightTextView.text = pokemon.weight.toString()
                 heightTextView.text = pokemon.height.toString()
                 baseXPTextView.text = pokemon.baseXP.toString()

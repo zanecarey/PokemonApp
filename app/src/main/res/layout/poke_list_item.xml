@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/pokemonName"
-        android:text="PokemonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="PokemonName"
         android:textSize="24sp">
 
     </TextView>
@@ -21,18 +21,18 @@
     </ImageView>
 
     <TextView
-    android:id="@+id/type1"
-    android:text="type1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="12sp"
-        android:layout_toEndOf="@+id/pokemonName"/>
+        android:id="@+id/type1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/pokemonName"
+        android:text="type1"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/type2"
-        android:text="type2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:layout_toEndOf="@id/type1"/>
+        android:layout_toEndOf="@id/type1"
+        android:text="type2"
+        android:textSize="12sp" />
 </RelativeLayout>

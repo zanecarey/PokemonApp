@@ -18,4 +18,5 @@
     <string name="bio">Bio</string>
     <string name="stats">Stats</string>
     <string name="evolutions">Evolutions</string>
+    <string name="pokemon_flavor_text">pokemon flavor text</string>
 </resources>

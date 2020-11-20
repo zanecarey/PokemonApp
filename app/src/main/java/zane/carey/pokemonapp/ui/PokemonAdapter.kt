@@ -25,12 +25,13 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 it.findNavController()
                     .navigate(R.id.action_navigation_pokemon_to_navigation_viewpager, idBundle)
             }
-            //itemView.type1.text = item.type?.get(0)
+            itemView.type1.text = item.type.toString()
+            //itemView.type2.text = item.type?.get(0)
 
-//            Glide.with(itemView.context)
-//                .load(item.sprites?.get(0))
-//                .placeholder(android.R.color.transparent)
-//                .into(itemView.pokemonImage)
+            Glide.with(itemView.context)
+                .load(item.sprites?.get(0))
+                .placeholder(android.R.color.transparent)
+                .into(itemView.pokemonImage)
         }
 
 

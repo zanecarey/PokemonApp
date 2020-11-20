@@ -29,42 +29,16 @@ class PokemonViewModel : ViewModel() {
 
     private fun initNetworkRequest() {
 
-//        val call = PokeAPI.pokemonService.getPokemon(1)
-//        call.enqueue(object : Callback<PokemonResults?> {
-//
-//            override fun onResponse(
-//                call: Call<PokemonResults?>,
-//                response: Response<PokemonResults?>
-//            ) {
-//                response.body()?.let { pokemons: PokemonResults ->
-//                    thread {
-//                        pokeDAO.insert(convert(pokemons))
-//                    }
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<PokemonResults?>, t: Throwable) {
-//                TODO("Not yet implemented")
-//            }
-//        })
-
-//        val firstPoke = liveData(Dispatchers.IO) {
-//            val returnedPoke = getPoke(1)
-//            pokeDAO.insert(convert(returnedPoke.body()!!))
-//            emit(returnedPoke)
-//        }
-
     }
 
     fun testGet() {
         viewModelScope.launch(Dispatchers.IO) {
-            var returnedPoke = getPoke(3)
 //            returnedPoke = getPoke(4)
-//            pokeDAO.insert(convert(returnedPoke))
 //            returnedPoke = getPoke(5)
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
-            var extraInfo = getExtraPokeInfo(3)
+            var returnedPoke = getPoke(11)
+            var extraInfo = getExtraPokeInfo(11)
             pokeDAO.insert(convert(returnedPoke,extraInfo))
         }
     }
@@ -80,20 +54,29 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.height,
             pokemonResults.weight,
             pokemonResults.baseExperience,
-            //listOf(pokemonResults.abilities[0].ability.name),
-            //listOf(pokemonResults.moves[0].move.name),
-            pokemonResults.stats[0].baseStat,
-            pokemonResults.stats[1].baseStat,
-            pokemonResults.stats[2].baseStat,
-            pokemonResults.stats[3].baseStat,
-            pokemonResults.stats[4].baseStat,
-            pokemonResults.stats[5].baseStat
-            //pokemonResults.gender
-            //pokemonResults.types[0].type.type
-            //listOf(pokemonResults.sprites.backDefault)
+            pokemonResults.stats[0].baseStat,//hp
+            pokemonResults.stats[1].baseStat,//attack
+            pokemonResults.stats[2].baseStat,//defense//
+            pokemonResults.stats[3].baseStat,//spAttack
+            pokemonResults.stats[4].baseStat,//spDefense
+            pokemonResults.stats[5].baseStat,//speed
+            pokemonSpecies.flavorTextEntries[1].flavorText,
+            listOf(pokemonResults.types[0].type.type),
+            //evolutionchain
+            listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
+            //listOf(pokemonResults.abilities[0].ability.name, pokemonResults.abilities[1].ability.name),
+            listOf(pokemonResults.abilities[0].ability.name),
+            listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
+            pokemonSpecies.genderRate,
+            pokemonSpecies.captureRate,
+            pokemonSpecies.baseHappiness,
+            pokemonSpecies.isLegendary,
+            pokemonSpecies.growthRate.name,
+            pokemonSpecies.color.name,
+            pokemonSpecies.shape.name,
+            pokemonSpecies.habitat?.name,
+            pokemonSpecies.generation.name
         )
-
-
     }
 
     suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
