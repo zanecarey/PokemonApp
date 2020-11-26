@@ -17,7 +17,7 @@ interface PokeInterfaceService {
     @GET("pokemon-color/{id}/")
     fun getPokemonColor(@Path("id") id: Int): PokemonColor
 
-    @GET("evolution-chain/{id}")
+    @GET("evolution-chain/{id}/")
     suspend fun getEvolutionChain(@Path("id") id: Int): EvolutionChain
 
     @GET("pokemon-species/{id}/")

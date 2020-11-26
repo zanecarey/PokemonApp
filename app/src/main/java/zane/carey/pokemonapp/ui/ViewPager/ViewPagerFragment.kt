@@ -37,18 +37,18 @@ class ViewPagerFragment : Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                pokemonNameTextView.text = pokemon.name
-                IDTextView.text = pokemon.id
-//
-//                pokemon.type.let{ firstType ->
-//                    textViewType1.text = firstType.toString()
-//
-//                }
-//
-//                Glide.with(view.context)
-//                    .load(pokemon.sprites?.get(0))
-//                    .placeholder(android.R.color.transparent)
-//                    .into(pokemonImageView)
+                pokemonNameTextView.text = pokemon.name?.capitalize()
+                IDTextView.text = "#" + pokemon.id
+
+                pokemon.type.let{ firstType ->
+                    textViewType1.text = firstType.toString()
+
+                }
+
+                Glide.with(view.context)
+                    .load(pokemon.sprites?.get(1))
+                    .placeholder(android.R.drawable.btn_star)
+                    .into(pokemonImageView)
 
                 val viewPager = viewPager
                 val pagerTabs = pagerTabs

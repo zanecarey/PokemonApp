@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.database.PokeDAO
+import zane.carey.pokemonapp.model.EvolutionChain
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.repository.PokeAPI
 import zane.carey.pokemonapp.repository.PokemonResults
@@ -37,9 +38,10 @@ class PokemonViewModel : ViewModel() {
 //            returnedPoke = getPoke(5)
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
-            var returnedPoke = getPoke(11)
-            var extraInfo = getExtraPokeInfo(11)
-            pokeDAO.insert(convert(returnedPoke,extraInfo))
+            var returnedPoke = getPoke(1)
+            var extraInfo = getExtraPokeInfo(1)
+            var evoChain = getEvoChain(1)
+            pokeDAO.insert(convert(returnedPoke,extraInfo,evoChain))
         }
     }
 
@@ -47,7 +49,7 @@ class PokemonViewModel : ViewModel() {
         return pokeDAO.getAll()
     }
 
-    fun convert(pokemonResults: PokemonResults, pokemonSpecies: PokemonSpecies): Pokemon {
+    fun convert(pokemonResults: PokemonResults, pokemonSpecies: PokemonSpecies, evolutionChain: EvolutionChain): Pokemon {
         return Pokemon(
             pokemonResults.id,
             pokemonResults.name,
@@ -62,7 +64,7 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.stats[5].baseStat,//speed
             pokemonSpecies.flavorTextEntries[1].flavorText,
             listOf(pokemonResults.types[0].type.type),
-            //evolutionchain
+            listOf(evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
             //listOf(pokemonResults.abilities[0].ability.name, pokemonResults.abilities[1].ability.name),
             listOf(pokemonResults.abilities[0].ability.name),
@@ -81,5 +83,6 @@ class PokemonViewModel : ViewModel() {
 
     suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
     suspend fun getExtraPokeInfo(id : Int) = PokeAPI.pokemonService.getPokemonSpecies(id)
+    suspend fun getEvoChain(id : Int) = PokeAPI.pokemonService.getEvolutionChain(id)
 }
 

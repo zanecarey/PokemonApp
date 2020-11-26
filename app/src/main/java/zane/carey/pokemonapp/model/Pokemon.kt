@@ -25,7 +25,7 @@ import zane.carey.pokemonapp.util.StringConverter
     var speed: Int? = null,
     var flavorText: String? = null,
     var type: List<String>? = null,
-    //var evolutionChain: List<String>? = null,
+    var evolutionChain: List<String>? = null,
     var sprites: List<String?>? = null,
     var abilities: List<String?>? = null,
     var moves: List<String?>? = null,

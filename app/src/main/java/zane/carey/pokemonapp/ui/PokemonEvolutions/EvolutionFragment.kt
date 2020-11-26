@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_poke_bio.*
+import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
@@ -45,6 +46,7 @@ class EvolutionFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
+                firstEvolutionTextView.text = pokemon.evolutionChain?.get(0).toString()
                 //typeTextView.text = pokemon.type.toString()
 //                weightTextView.text = pokemon.weight.toString()
 //                heightTextView.text = pokemon.height.toString()

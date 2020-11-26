@@ -75,14 +75,12 @@ data class Stat(
 )
 
 data class PokemonType(
+    @SerializedName("slot")
+    val slot: Int,
     @SerializedName("type")
-    val type: Type
+    val type: NamedApiResource
 )
 
-data class Type(
-    @SerializedName("type")
-    val type: String
-)
 
 data class PokemonSprite(
     @SerializedName("back_default")
