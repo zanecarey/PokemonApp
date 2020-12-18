@@ -49,4 +49,3 @@ class ItemAdapter(private val itemList: List<Item>, private val context: Context
 
 
 }
-}
