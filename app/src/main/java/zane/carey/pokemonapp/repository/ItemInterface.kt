@@ -7,15 +7,15 @@ data class Item(
     val name: String,
     val cost: Int,
     val fling_power: Int?,
-    val flingEffect: NamedApiResource?,
+    val fling_effect: NamedApiResource?,
     val attributes: List<NamedApiResource>,
     val category: NamedApiResource,
-    val effectEntries: List<VerboseEffect>,
-    val flavorTextEntries: List<VersionGroupFlavorText>,
-    val gameIndices: List<GenerationGameIndex>,
+    val effect_entries: List<VerboseEffect>,
+    val flavor_text_entries: List<VersionGroupFlavorText>,
+    val game_indices: List<GenerationGameIndex>,
     val names: List<Name>,
-    val heldByPokemon: List<ItemHolderPokemon>,
-    val babyTriggerFor: ApiResource?,
+    val held_by_pokemon: List<ItemHolderPokemon>,
+    val baby_trigger_for: ApiResource?,
     val sprites: ItemSprites
 )
 
@@ -25,7 +25,7 @@ data class ItemSprites(
 
 data class ItemHolderPokemon(
     val pokemon: NamedApiResource,
-    val versionDetails: List<ItemHolderPokemonVersionDetail>
+    val version_details: List<ItemHolderPokemonVersionDetail>
 )
 
 data class ItemHolderPokemonVersionDetail(
@@ -52,7 +52,7 @@ data class ItemCategory(
 data class ItemFlingEffect(
     val id: Int,
     val name: String,
-    val effectEntries: List<Effect>,
+    val effect_entries: List<Effect>,
     val items: List<NamedApiResource>
 )
 

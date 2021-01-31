@@ -16,6 +16,10 @@
         <action
             android:id="@+id/action_navigation_main_to_navigation_types"
             app:destination="@id/navigation_types"/>
+        <action
+            android:id="@+id/action_navigation_main_to_navigation_poke_item"
+            app:destination="@id/navigation_types"/>
+
     </fragment>
 
     <fragment
@@ -26,6 +30,21 @@
         <action
             android:id="@+id/action_navigation_pokemon_to_navigation_viewpager"
             app:destination="@id/navigation_viewpager" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_poke_item"
+        android:name="zane.carey.pokemonapp.ui.items.ItemFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
+            app:destination="@id/navigation_item_display"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_item_display"
+        android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
+        android:label="@string/app_name">
     </fragment>
 
     <fragment

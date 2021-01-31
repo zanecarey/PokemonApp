@@ -38,7 +38,7 @@ class CategoryAdapter(
                 } else if(item.id == 5){//Moves
 
                 } else if(item.id == 6){//Items
-
+                    it.findNavController().navigate(R.id.action_navigation_main_to_navigation_poke_item)
                 }
 
 

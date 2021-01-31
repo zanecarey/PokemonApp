@@ -24,7 +24,7 @@ class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context:
                 var idBundle = bundleOf("id" to pokeItem.id)
 
                 it.findNavController()
-                    .navigate(R.id.action_navigation_pokemon_to_navigation_viewpager, idBundle)
+                    .navigate(R.id.action_navigation_poke_item_to_navigation_item_display, idBundle)
 
                 Glide.with(itemView.context)
                     .load(pokeItem.sprites?.get(0))
