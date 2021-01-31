@@ -50,7 +50,7 @@ class ItemFragment: Fragment() {
 
         itemViewModel.getItemList().observe(viewLifecycleOwner, Observer {
             val items: List<PokeItem> = it
-            itemRecyclerView.adapter = PokemonAdapter(items, view.context)
+            itemRecyclerView.adapter = ItemAdapter(items, view.context)
         })
     }
 }
