@@ -1,6 +1,6 @@
 package zane.carey.pokemonapp.ui.items
 
-import Item
+import PokeItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import zane.carey.pokemonapp.App
@@ -10,7 +10,7 @@ class ItemViewModel : ViewModel() {
 
     private val pokeDao: PokeDAO = App.database.pokeDao()
 
-    fun getItemList(): LiveData<List<Item>> {
+    fun getItemList(): LiveData<List<PokeItem>> {
         return pokeDao.getAllItems()
     }
 }

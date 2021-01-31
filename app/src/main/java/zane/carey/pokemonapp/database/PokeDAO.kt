@@ -1,10 +1,9 @@
 package zane.carey.pokemonapp.database
 
-import Item
+import PokeItem
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import zane.carey.pokemonapp.model.Pokemon
-import zane.carey.pokemonapp.repository.PokemonResults
 
 @Dao
 interface PokeDAO {
@@ -24,15 +23,15 @@ interface PokeDAO {
     fun delete(model: Pokemon)
 
     //ITEM COMMANDS
-    @Query("SELECT * FROM item WHERE id = :id")
-    fun getItemById(id: String?) : LiveData<Item>
+    @Query("SELECT * FROM PokeItem WHERE id = :id")
+    fun getItemById(id: String?) : LiveData<PokeItem>
 
-    @Query("SELECT * FROM item")
-    fun getAllItems(): LiveData<List<Item>>
+    @Query("SELECT * FROM PokeItem")
+    fun getAllItems(): LiveData<List<PokeItem>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertItem(item: Item)
+    fun insertItem(pokeItem: PokeItem)
 
-    @Query("DELETE FROM item")
+    @Query("DELETE FROM PokeItem")
     fun deleteAllItems()
 }

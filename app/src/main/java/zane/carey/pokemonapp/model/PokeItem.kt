@@ -6,7 +6,7 @@ import zane.carey.pokemonapp.util.StringConverter
 
 @Entity
 @TypeConverters(StringConverter::class)
-data class Item(
+data class PokeItem(
     @PrimaryKey
     @NonNull
     var id: String,
