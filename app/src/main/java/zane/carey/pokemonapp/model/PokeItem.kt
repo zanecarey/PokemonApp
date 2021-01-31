@@ -1,8 +1,9 @@
+package zane.carey.pokemonapp.model
+
 import androidx.annotation.NonNull
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import zane.carey.pokemonapp.model.NamedApiResource
 import zane.carey.pokemonapp.util.StringConverter
 
 @Entity

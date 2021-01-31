@@ -5,6 +5,6 @@ import retrofit2.http.Path
 
 interface ItemInterfaceService {
 
-    @GET("pokemon/{id}/")
-    suspend fun getPokemon(@Path("id") id: Int): Item
+    @GET("item/{id}/")
+    suspend fun getItem(@Path("id") id: Int): Item
 }

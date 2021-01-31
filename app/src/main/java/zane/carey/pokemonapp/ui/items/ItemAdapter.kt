@@ -1,6 +1,6 @@
 package zane.carey.pokemonapp.ui.items
 
-import PokeItem
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.item_list_view.view.*
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.App.Companion.context
 import zane.carey.pokemonapp.R
+import zane.carey.pokemonapp.model.Pokemon
+import zane.carey.pokemonapp.model.PokeItem
 
 class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context: Context) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 

@@ -3,7 +3,7 @@ package zane.carey.pokemonapp.repository
 import zane.carey.pokemonapp.model.*
 
 data class Item(
-    val id: Int,
+    val id: String,
     val name: String,
     val cost: Int,
     val fling_power: Int?,

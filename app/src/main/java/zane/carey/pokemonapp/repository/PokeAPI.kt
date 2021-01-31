@@ -13,4 +13,5 @@ object PokeAPI {
         .build()
 
     val pokemonService: PokeInterfaceService = retrofit.create(PokeInterfaceService::class.java)
+    val itemService: ItemInterfaceService = retrofit.create(ItemInterfaceService::class.java)
 }
