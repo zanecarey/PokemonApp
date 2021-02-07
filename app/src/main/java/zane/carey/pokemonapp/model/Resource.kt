@@ -88,3 +88,8 @@ data class Effect(
     val effect: String,
     val language: NamedApiResource
 )
+
+data class AbilityEffectChange(
+    val effectEntries: List<Effect>,
+    val versionGroup: NamedApiResource
+)
