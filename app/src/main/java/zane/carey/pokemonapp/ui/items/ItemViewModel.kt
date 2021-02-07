@@ -1,6 +1,5 @@
 package zane.carey.pokemonapp.ui.items
 
-import PokeItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.database.PokeDAO
+import zane.carey.pokemonapp.model.PokeItem
 import zane.carey.pokemonapp.repository.Item
 import zane.carey.pokemonapp.repository.PokeAPI
 
