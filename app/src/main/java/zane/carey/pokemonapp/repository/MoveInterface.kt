@@ -5,7 +5,7 @@ import zane.carey.pokemonapp.model.*
 
 
 data class Move(
-    val id: Int,
+    val id: String,
     val name: String,
     val accuracy: Int?,
     val effectChance: Int?,
@@ -25,7 +25,7 @@ data class Move(
     val pastValues: List<PastMoveStatValues>,
     val statChanges: List<MoveStatChange>,
     val target: NamedApiResource,
-    val type: NamedApiResource,
+    val type: NamedApiResource
 )
 
 data class ContestComboSets(

@@ -18,21 +18,21 @@ class MoveViewModel: ViewModel() {
     private val pokeDao: PokeDAO = App.database.pokeDao()
 
     fun getMoveList(): LiveData<List<PokemonMove>> {
-        return pokeDao.getAllItems()
+        return pokeDao.getAllMoves()
     }
 
-    fun convertItem(move: Move): PokeItem {
-        return PokeItem(
+    fun convertMove(move: Move): PokemonMove {
+        return PokemonMove(
             move.id,
-            move.name,
+            move.name
 
         )
     }
 
-    fun testGetItem() {
+    fun testGetMove() {
         viewModelScope.launch(Dispatchers.IO) {
             var returnedMove = getMove(0)
-            pokeDao.insertItem(convertItem(returnedMove))
+            pokeDao.insertMove(convertMove(returnedMove))
         }
     }
 
