@@ -1,6 +1,5 @@
 package zane.carey.pokemonapp.ui.items
 
-import PokeItem
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_pokemon.pokedexRecyclerView
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.database.PokeDAO
+import zane.carey.pokemonapp.model.PokeItem
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.ui.PokemonAdapter
 import zane.carey.pokemonapp.ui.PokemonViewModel
