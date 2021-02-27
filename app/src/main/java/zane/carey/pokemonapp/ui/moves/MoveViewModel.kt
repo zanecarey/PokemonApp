@@ -24,7 +24,8 @@ class MoveViewModel: ViewModel() {
     fun convertMove(move: Move): PokemonMove {
         return PokemonMove(
             move.id,
-            move.name
+            move.name,
+            move.accuracy
 
         )
     }

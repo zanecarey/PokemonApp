@@ -13,5 +13,16 @@ data class PokemonMove(
     @NonNull
     var id: String,
     var name: String?,
-    var sprites: List<String?>?
+    val accuracy: Int?,
+    val effectChance: Int?,
+    val pp: Int?,
+    val priority: Int,
+    val power: Int?,
+    val damageClass: String?,
+    val effectEntries: List<String>,
+    val effectChanges: List<String>,
+    val generation: String,
+    val names: List<Name>,
+    val target: String?,
+    val type: String?
 )
