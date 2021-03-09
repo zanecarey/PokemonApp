@@ -1,6 +1,5 @@
 package zane.carey.pokemonapp.ui.regions
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_region.*
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.database.PokeDAO
-import zane.carey.pokemonapp.model.PokeItem
-import zane.carey.pokemonapp.model.Region
-import zane.carey.pokemonapp.ui.items.ItemAdapter
-import zane.carey.pokemonapp.ui.items.ItemViewModel
+import zane.carey.pokemonapp.model.PokemonRegion
 
 class RegionFragment: Fragment(){
     private lateinit var regionViewModel: RegionViewModel
@@ -44,8 +39,8 @@ class RegionFragment: Fragment(){
         regionRecyclerView.layoutManager = layoutManager
 
         regionViewModel.getRegionList().observe(viewLifecycleOwner, Observer {
-            val regions: List<Region> = it
-            regionRecyclerView.adapter = RegionAdapter(regions, view.context)
+            val pokemonRegions: List<PokemonRegion> = it
+            regionRecyclerView.adapter = RegionAdapter(pokemonRegions, view.context)
         })
     }
 }

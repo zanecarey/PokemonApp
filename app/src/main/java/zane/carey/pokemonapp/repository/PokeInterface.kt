@@ -55,10 +55,10 @@ data class PokemonMove(
     //val versionGroupDetails: List<PokemonMoveVersion>
 )
 
-data class Move(
-    @SerializedName("name")
-    val name: String
-)
+//data class Move(
+//    @SerializedName("name")
+//    val name: String
+//)
 
 data class PokemonStat(
     @SerializedName("stat")

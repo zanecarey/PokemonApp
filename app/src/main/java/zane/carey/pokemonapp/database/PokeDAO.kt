@@ -5,7 +5,7 @@ import androidx.room.*
 import zane.carey.pokemonapp.model.PokeItem
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.model.PokemonMove
-import zane.carey.pokemonapp.model.Region
+import zane.carey.pokemonapp.model.PokemonRegion
 
 @Dao
 interface PokeDAO {
@@ -51,16 +51,16 @@ interface PokeDAO {
     fun deleteAllMoves()
 
     //REGION COMMANDS
-    @Query("SELECT * FROM Region WHERE id = :id")
-    fun getRegionById(id: String?) : LiveData<Region>
+    @Query("SELECT * FROM PokemonRegion WHERE id = :id")
+    fun getRegionById(id: String?) : LiveData<PokemonRegion>
 
-    @Query("SELECT * FROM Region")
-    fun getAllRegions(): LiveData<List<Region>>
+    @Query("SELECT * FROM PokemonRegion")
+    fun getAllRegions(): LiveData<List<PokemonRegion>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRegion(region: Region)
+    fun insertRegion(pokemonRegion: PokemonRegion)
 
-    @Query("DELETE FROM Region")
+    @Query("DELETE FROM PokemonRegion")
     fun deleteAllRegions()
 
 }

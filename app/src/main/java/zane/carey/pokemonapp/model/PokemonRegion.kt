@@ -8,9 +8,11 @@ import zane.carey.pokemonapp.util.StringConverter
 
 @Entity
 @TypeConverters(StringConverter::class)
-data class Region(
+data class PokemonRegion(
     @PrimaryKey
     @NonNull
     var id: String,
-    var name: String? = null
+    var name: String? = null,
+    var location: List<String?>?,
+    var main_generation: String?
 )

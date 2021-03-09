@@ -22,7 +22,7 @@ data class PokemonMove(
     val effectEntries: List<String>,
     val effectChanges: List<String>,
     val generation: String,
-    val names: List<Name>,
+    val names: List<String>,
     val target: String?,
     val type: String?
 )

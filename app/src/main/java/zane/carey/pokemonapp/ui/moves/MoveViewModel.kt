@@ -25,8 +25,18 @@ class MoveViewModel: ViewModel() {
         return PokemonMove(
             move.id,
             move.name,
-            move.accuracy
-
+            move.accuracy,
+            move.effect_chance,
+            move.pp,
+            move.priority,
+            move.power,
+            move.damage_class.name,
+            listOf(move.effect_entries[0].effect),
+            listOf(move.effect_changes[0].toString()),
+            move.generation.name.toString(),
+            listOf(move.names[0].name),
+            move.target.name,
+            move.type.name
         )
     }
 

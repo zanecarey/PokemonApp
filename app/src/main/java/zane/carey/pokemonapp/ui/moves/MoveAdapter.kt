@@ -27,10 +27,10 @@ class MoveAdapter(private val moveList: List<PokemonMove>, private val context: 
                 it.findNavController()
                     .navigate(R.id.action_navigation_poke_item_to_navigation_item_display, idBundle)
 
-                Glide.with(itemView.context)
-                    .load(pokemonMove.sprites?.get(0))
-                    .placeholder(android.R.color.transparent)
-                    .into(itemView.itemImage)
+//                Glide.with(itemView.context)
+//                    .load(pokemonMove.sprites?.get(0))
+//                    .placeholder(android.R.color.transparent)
+//                    .into(itemView.itemImage)
             }
         }
     }

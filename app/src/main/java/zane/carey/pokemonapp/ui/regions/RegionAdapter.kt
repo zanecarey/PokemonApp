@@ -7,30 +7,27 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_list_view.view.*
 import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.R
-import zane.carey.pokemonapp.model.PokeItem
-import zane.carey.pokemonapp.model.Region
-import zane.carey.pokemonapp.ui.items.ItemAdapter
+import zane.carey.pokemonapp.model.PokemonRegion
 
-class RegionAdapter(private val regionList: List<Region>, private val context: Context) : RecyclerView.Adapter<RegionAdapter.ViewHolder>() {
+class RegionAdapter(private val pokemonRegionList: List<PokemonRegion>, private val context: Context) : RecyclerView.Adapter<RegionAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        fun bindView(region: Region) {
-            itemView.itemName.text = region.name
+        fun bindView(pokemonRegion: PokemonRegion) {
+            itemView.itemName.text = pokemonRegion.name
             itemView.setOnClickListener {
-                var idBundle = bundleOf("id" to region.id)
+                var idBundle = bundleOf("id" to pokemonRegion.id)
 
                 it.findNavController()
                     .navigate(R.id.action_navigation_poke_item_to_navigation_item_display, idBundle)
 
-                Glide.with(itemView.context)
-                    .load(region.sprites?.get(0))
-                    .placeholder(android.R.color.transparent)
-                    .into(itemView.itemImage)
+//                Glide.with(itemView.context)
+//                    .load(region.sprites?.get(0))
+//                    .placeholder(android.R.color.transparent)
+//                    .into(itemView.itemImage)
             }
         }
     }
@@ -42,11 +39,11 @@ class RegionAdapter(private val regionList: List<Region>, private val context: C
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = regionList[position]
+        val item = pokemonRegionList[position]
         holder.bindView(item)
     }
 
     override fun getItemCount(): Int {
-        return regionList.size
+        return pokemonRegionList.size
     }
 }
