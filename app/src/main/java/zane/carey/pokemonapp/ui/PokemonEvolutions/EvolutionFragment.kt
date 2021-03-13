@@ -46,7 +46,7 @@ class EvolutionFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                firstEvolutionTextView.text = pokemon.evolutionChain?.get(0).toString()
+                firstEvolutionTextView.text = pokemon.evolutionChain?.get(0).toString().capitalize()
                 //typeTextView.text = pokemon.type.toString()
 //                weightTextView.text = pokemon.weight.toString()
 //                heightTextView.text = pokemon.height.toString()

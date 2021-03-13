@@ -38,10 +38,16 @@ class PokemonViewModel : ViewModel() {
 //            returnedPoke = getPoke(5)
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
-            var returnedPoke = getPoke(1)
-            var extraInfo = getExtraPokeInfo(1)
-            var evoChain = getEvoChain(1)
-            pokeDAO.insert(convert(returnedPoke,extraInfo,evoChain))
+            for(i in 1..50){
+                var returnedPoke = getPoke(i)
+                var extraInfo = getExtraPokeInfo(i)
+                var evoChain = getEvoChain(i)
+                pokeDAO.insert(convert(returnedPoke,extraInfo,evoChain))
+            }
+//            var returnedPoke = getPoke(1)
+//            var extraInfo = getExtraPokeInfo(1)
+//            var evoChain = getEvoChain(1)
+//            pokeDAO.insert(convert(returnedPoke,extraInfo,evoChain))
         }
     }
 
@@ -84,5 +90,7 @@ class PokemonViewModel : ViewModel() {
     suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
     suspend fun getExtraPokeInfo(id : Int) = PokeAPI.pokemonService.getPokemonSpecies(id)
     suspend fun getEvoChain(id : Int) = PokeAPI.pokemonService.getEvolutionChain(id)
+
+
 }
 
