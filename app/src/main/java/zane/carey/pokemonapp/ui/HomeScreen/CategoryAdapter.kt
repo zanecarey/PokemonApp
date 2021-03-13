@@ -26,7 +26,8 @@ class CategoryAdapter(
 
             itemView.setOnClickListener {
                 if(item.id == 1){//Pokedex
-
+                    //color category background
+                    itemView.setBackgroundColor(item.color)
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
                 } else if(item.id == 2){//Generation
 

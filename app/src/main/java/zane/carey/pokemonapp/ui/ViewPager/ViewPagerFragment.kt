@@ -41,7 +41,7 @@ class ViewPagerFragment : Fragment() {
                 IDTextView.text = "#" + pokemon.id
 
                 pokemon.type.let{ firstType ->
-                    textViewType1.text = firstType.toString()
+                    textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
 
                 }
 
