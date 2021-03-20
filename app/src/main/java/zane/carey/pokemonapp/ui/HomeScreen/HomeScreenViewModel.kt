@@ -21,7 +21,7 @@ class HomeScreenViewModel : ViewModel() {
             Category(2, "Generation", R.color.green),
             Category(3, "Types", R.color.blue),
             Category(4, "Locations", R.color.orange),
-            Category(5, "Pokemon", R.color.purple),
+            Category(5, "Moves", R.color.purple),
             Category(6, "Items", R.color.yellow)
         )
         return listMenu
