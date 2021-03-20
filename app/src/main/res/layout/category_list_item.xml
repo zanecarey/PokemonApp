@@ -10,7 +10,9 @@
     android:clipToPadding="false"
     android:focusable="true"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="@color/blue"
+    >
 
     <TextView
         android:id="@+id/categoryName"

@@ -1,14 +1,17 @@
 package zane.carey.pokemonapp.ui.HomeScreen
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.category_list_item.view.*
+import zane.carey.pokemonapp.App.Companion.context
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Category
 import java.util.*
@@ -27,7 +30,10 @@ class CategoryAdapter(
             itemView.setOnClickListener {
                 if(item.id == 1){//Pokedex
                     //color category background
-                    itemView.setBackgroundColor(item.color)
+                    //itemView.relativeLayoutBackground.setBackgroundColor(R.color.red)
+                    val colorValue = ContextCompat.getColor(context, R.color.red)
+                    itemView.relativeLayoutBackground.setBackgroundColor(colorValue)
+
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
                 } else if(item.id == 2){//Generation
 
@@ -54,6 +60,7 @@ class CategoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = categories[position]
+        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
         holder.bindView(item)
     }
 
