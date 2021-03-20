@@ -29,10 +29,6 @@ class CategoryAdapter(
 
             itemView.setOnClickListener {
                 if(item.id == 1){//Pokedex
-                    //color category background
-                    //itemView.relativeLayoutBackground.setBackgroundColor(R.color.red)
-                    val colorValue = ContextCompat.getColor(context, R.color.red)
-                    itemView.relativeLayoutBackground.setBackgroundColor(colorValue)
 
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
                 } else if(item.id == 2){//Generation
@@ -60,7 +56,7 @@ class CategoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = categories[position]
-        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
+        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, item.color))
         holder.bindView(item)
     }
 

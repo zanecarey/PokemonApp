@@ -18,10 +18,13 @@
             app:destination="@id/navigation_types"/>
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_item"
-            app:destination="@id/navigation_types"/>
+            app:destination="@id/navigation_poke_item"/>
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_moves"
-            app:destination="@id/navigation_types"/>
+            app:destination="@id/navigation_poke_moves"/>
+        <action
+            android:id="@+id/action_navigation_main_to_navigation_poke_regions"
+            app:destination="@id/navigation_poke_regions"/>
 
     </fragment>
 
@@ -54,6 +57,15 @@
     </fragment>
 
     <fragment
+        android:id="@+id/navigation_poke_regions"
+        android:name="zane.carey.pokemonapp.ui.items.ItemFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
+            app:destination="@id/navigation_region_display"/>
+    </fragment>
+
+    <fragment
         android:id="@+id/navigation_item_display"
         android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
         android:label="@string/app_name">
@@ -61,6 +73,12 @@
 
     <fragment
         android:id="@+id/navigation_move_display"
+        android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
+        android:label="@string/app_name">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_region_display"
         android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
         android:label="@string/app_name">
     </fragment>
