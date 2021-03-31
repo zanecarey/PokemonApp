@@ -37,7 +37,7 @@ class CategoryAdapter(
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_types)
 
                 } else if(item.id == 4){//Locations
-
+                    it.findNavController().navigate(R.id.action_navigation_main_to_navigation_poke_regions)
                 } else if(item.id == 5){//Moves
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_poke_moves)
                 } else if(item.id == 6){//Items
