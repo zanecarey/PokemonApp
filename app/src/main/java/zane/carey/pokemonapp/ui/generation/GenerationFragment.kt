@@ -21,12 +21,12 @@ import zane.carey.pokemonapp.ui.items.ItemViewModel
 
 class GenerationFragment: Fragment() {
 
-    private lateinit var genViewModel: ItemViewModel
+    private lateinit var genViewModel: GenerationViewModel
     private val pokeDao: PokeDAO = App.database.pokeDao()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        genViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
+        genViewModel = ViewModelProvider(this).get(GenerationViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -44,7 +44,7 @@ class GenerationFragment: Fragment() {
         val layoutManager = GridLayoutManager(context, 2)
         genRecyclerView.layoutManager = layoutManager
 
-        genViewModel.getItemList().observe(viewLifecycleOwner, Observer {
+        genViewModel.getGenList().observe(viewLifecycleOwner, Observer {
             val gens: List<PokeGeneration> = it
             genRecyclerView.adapter = GenerationAdapter(gens, view.context)
         })

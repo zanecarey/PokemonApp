@@ -25,7 +25,9 @@
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_regions"
             app:destination="@id/navigation_poke_regions"/>
-
+        <action
+            android:id="@+id/action_navigation_main_to_navigation_poke_gens"
+            app:destination="@id/navigation_poke_regions"/>
     </fragment>
 
     <fragment
@@ -44,6 +46,15 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
+            app:destination="@id/navigation_item_display"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_poke_gens"
+        android:name="zane.carey.pokemonapp.ui.generation.GenerationFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_navigation_poke_gens_to_navigation_gens_display"
             app:destination="@id/navigation_item_display"/>
     </fragment>
 
@@ -80,6 +91,12 @@
     <fragment
         android:id="@+id/navigation_region_display"
         android:name="zane.carey.pokemonapp.ui.regions.RegionDisplay"
+        android:label="@string/app_name">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_gens_display"
+        android:name="zane.carey.pokemonapp.ui.regions.GenerationDisplay"
         android:label="@string/app_name">
     </fragment>
 
