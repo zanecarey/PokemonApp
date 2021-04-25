@@ -16,4 +16,5 @@ object PokeAPI {
     val itemService: ItemInterfaceService = retrofit.create(ItemInterfaceService::class.java)
     val moveService: MoveInterfaceService = retrofit.create(MoveInterfaceService::class.java)
     val regionService: RegionInterfaceService = retrofit.create(RegionInterfaceService::class.java)
+    val genService: GenInterfaceSerivce = retrofit.create(GenInterfaceSerivce::class.java)
 }

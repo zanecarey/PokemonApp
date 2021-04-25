@@ -2,10 +2,7 @@ package zane.carey.pokemonapp.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import zane.carey.pokemonapp.model.PokeItem
-import zane.carey.pokemonapp.model.Pokemon
-import zane.carey.pokemonapp.model.PokemonMove
-import zane.carey.pokemonapp.model.PokemonRegion
+import zane.carey.pokemonapp.model.*
 
 @Dao
 interface PokeDAO {
@@ -63,4 +60,16 @@ interface PokeDAO {
     @Query("DELETE FROM PokemonRegion")
     fun deleteAllRegions()
 
+    //GEN COMMANDS
+    @Query("SELECT * FROM PokeGeneration WHERE id = :id")
+    fun getGenById(id: String?) : LiveData<PokeGeneration>
+
+    @Query("SELECT * FROM PokeGeneration")
+    fun getAllGens(): LiveData<List<PokeGeneration>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertGen(pokeGen: PokeGeneration)
+
+    @Query("DELETE FROM PokeGeneration")
+    fun deleteAllGenss()
 }
