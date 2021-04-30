@@ -6,7 +6,7 @@ import zane.carey.pokemonapp.model.NamedApiResource
 
 
 data class Generation(
-    val id: Int,
+    val id: String,
     val name: String,
     val abilities: List<NamedApiResource>,
     val names: List<Name>,

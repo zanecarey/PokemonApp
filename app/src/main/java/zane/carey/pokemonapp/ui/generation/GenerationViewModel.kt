@@ -20,7 +20,15 @@ class GenerationViewModel : ViewModel() {
 
     fun convertGen(gen: Generation): PokeGeneration {
         return PokeGeneration(
-
+            gen.id,
+            gen.name,
+            listOf(gen.abilities[0].name),
+            listOf(gen.names[0].name),
+            gen.mainRegion.name,
+            listOf(gen.moves[0].name),
+            listOf(gen.pokemonSpecies[0].name),
+            listOf(gen.types[0].name),
+            listOf(gen.versionGroups[0].name)
         )
     }
 
