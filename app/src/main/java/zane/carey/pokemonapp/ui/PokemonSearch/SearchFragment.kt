@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
+import kotlinx.android.synthetic.main.fragment_poke_search.*
 import kotlinx.android.synthetic.main.fragment_poke_search.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,10 +33,10 @@ class SearchFragment: Fragment() {
             //view.searchTest.text = entry
             //make api call with entered name
             val job = CoroutineScope(Dispatchers.Main).launch{
-
+                val results = getPoke(entry)
                 withContext(Dispatchers.Main) {
+                    searchEntry.setText(results.id)
 
-                    val results = getPoke(entry)
                 }
             } //update ui info
 
