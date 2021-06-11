@@ -28,6 +28,10 @@
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_gens"
             app:destination="@id/navigation_poke_regions"/>
+        <action
+            android:id="@+id/action_navigation_main_to_navigation_poke_viewpager"
+            app:destination="@id/navigation_viewpager"/>
+
     </fragment>
 
     <fragment
@@ -96,7 +100,7 @@
 
     <fragment
         android:id="@+id/navigation_gens_display"
-        android:name="zane.carey.pokemonapp.ui.regions.GenerationDisplay"
+        android:name="zane.carey.pokemonapp.ui.generation.GenerationDisplay"
         android:label="@string/app_name">
     </fragment>
 
