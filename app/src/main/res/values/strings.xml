@@ -7,16 +7,16 @@
     <string name="special_defense">Special-Defense</string>
     <string name="speed">Speed</string>
     <string name="pokemon_bio">Pokemon Bio</string>
-    <string name="pokemon_type">Pokemon Type</string>
-    <string name="pokemon_weight">Pokemon Weight</string>
-    <string name="pokemon_height">Pokemon Height</string>
+    <string name="pokemon_type">Pokemon Type:</string>
+    <string name="pokemon_weight">Pokemon Weight:</string>
+    <string name="pokemon_height">Pokemon Height:</string>
     <string name="abilities">Abilities</string>
     <string name="pokeAbilitiesList">pokeAbilitiesList</string>
     <string name="pokeLearnedMoves">pokeLearnedMoves</string>
     <string name="learned_moves">Learned Moves</string>
-    <string name="base_xp">Base XP</string>
+    <string name="base_xp">Base XP:</string>
     <string name="bio">Bio</string>
     <string name="stats">Stats</string>
     <string name="evolutions">Evolutions</string>
-    <string name="pokemon_flavor_text">pokemon flavor text</string>
+    <string name="pokemon_flavor_text">Flavor text:</string>
 </resources>
