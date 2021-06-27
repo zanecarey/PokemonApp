@@ -26,16 +26,21 @@ class CategoryAdapter(
 
             itemView.categoryName.text = item.name
 
-
+            when(item.id ){
+                1 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_menu_book_24)
+                2 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_timeline_24)
+                3 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_timeline_24)
+                4 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_map_24)
+                5 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_whatshot_24)
+                6 -> itemView.categoryImage.setBackgroundResource(R.drawable.ic_baseline_fastfood_24)
+            }
             itemView.setOnClickListener {
                 if(item.id == 1){//Pokedex
-
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_pokemon)
                 } else if(item.id == 2){//Generation
-
+                    it.findNavController().navigate(R.id.action_navigation_main_to_navigation_poke_gens)
                 } else if(item.id == 3){//Types
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_types)
-
                 } else if(item.id == 4){//Locations
                     it.findNavController().navigate(R.id.action_navigation_main_to_navigation_poke_regions)
                 } else if(item.id == 5){//Moves
