@@ -69,7 +69,8 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.stats[4].baseStat,//spDefense
             pokemonResults.stats[5].baseStat,//speed
             pokemonSpecies.flavorTextEntries[1].flavorText,
-            listOf(pokemonResults.types[0].type.name),
+            //listOf(pokemonResults.types[0].type.name, pokemonResults.types[1].type.name),
+            pokemonResults.types,
             listOf(evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
             //listOf(pokemonResults.abilities[0].ability.name, pokemonResults.abilities[1].ability.name),

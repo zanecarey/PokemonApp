@@ -4,6 +4,7 @@ import androidx.annotation.NonNull
 import androidx.room.*
 
 import retrofit2.Converter
+import zane.carey.pokemonapp.repository.PokemonType
 import zane.carey.pokemonapp.util.StringConverter
 
 
@@ -24,7 +25,7 @@ import zane.carey.pokemonapp.util.StringConverter
     var spDefense: Int? = null,
     var speed: Int? = null,
     var flavorText: String? = null,
-    var type: List<String>? = null,
+    var type: List<PokemonType>? = null,
     var evolutionChain: List<String>? = null,
     var sprites: List<String?>? = null,
     var abilities: List<String?>? = null,
