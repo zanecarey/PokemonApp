@@ -48,7 +48,8 @@ class BioFragment: Fragment() {
             pokemonValue?.let { pokemon ->
 
                 bioTextView.text = pokemon.flavorText
-                typeTextView.text = pokemon.type.toString().substring(1, pokemon.type.toString().length - 1).capitalize()
+                //typeTextView.text = pokemon.type.toString().substring(1, pokemon.type.toString().length - 1).capitalize()
+                typeTextView.text = pokemon.type!![0].type.name
                 weightTextView.text = pokemon.weight.toString()
                 heightTextView.text = pokemon.height.toString()
                 baseXPTextView.text = pokemon.baseXP.toString()

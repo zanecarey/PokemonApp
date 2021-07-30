@@ -41,6 +41,7 @@
                         android:layout_alignParentTop="true"
                         android:textSize="36sp"
                         android:textStyle="bold"
+                        android:textColor="#FFF"
                         android:text="PokemonName" />
 
                     <TextView
@@ -49,7 +50,6 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:alpha="0.5"
                         android:gravity="top"
                         android:textColor="#FFF"
                         android:textSize="18sp"
@@ -65,8 +65,7 @@
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:textColor="#fff"
-                        android:textSize="14sp"
-                         />
+                        android:textSize="14sp" />
                 </RelativeLayout>
 
             </androidx.appcompat.widget.Toolbar>

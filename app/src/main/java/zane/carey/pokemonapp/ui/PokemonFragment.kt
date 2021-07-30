@@ -44,7 +44,7 @@ class PokemonFragment: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         val pokemonRecyclerView = pokedexRecyclerView
-        val layoutManager = GridLayoutManager(context, 2)
+        val layoutManager = GridLayoutManager(context, 1)
         pokemonRecyclerView.layoutManager = layoutManager
 
         pokeViewModel.testGet()

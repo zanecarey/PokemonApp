@@ -35,7 +35,6 @@
         android:layout_marginBottom="-16dp"
         android:adjustViewBounds="true"
         android:alpha="0.25"
-        android:src="@drawable/ic_baseline_search_24"
         />
 
 </RelativeLayout>

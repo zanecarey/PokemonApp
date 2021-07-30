@@ -8,10 +8,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/category_list_item.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_bio.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_evolutions.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_stats.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_pokemon.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_viewpager.xml" value="0.25" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/poke_list_item.xml" value="0.36594202898550726" />
       </map>
     </option>
