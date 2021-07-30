@@ -5,6 +5,16 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_bio.xml" value="0.36594202898550726" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_stats.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_pokemon.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/poke_list_item.xml" value="0.36594202898550726" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
