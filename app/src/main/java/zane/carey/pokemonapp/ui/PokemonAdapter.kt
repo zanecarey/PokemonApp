@@ -25,8 +25,11 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 it.findNavController()
                     .navigate(R.id.action_navigation_pokemon_to_navigation_viewpager, idBundle)
             }
-            itemView.type1.text = item.type?.get(0).toString()
-            itemView.type2.text = item.type?.getOrNull(1).toString()
+            //itemView.type1.text = item.type?.get(0).toString()
+            itemView.type1.text = item.type?.get(0)!!.type.name
+            if(item.type!!.size >= 2){
+                itemView.type2.text = item.type?.getOrNull(1)!!.type.name
+            }
 
             Glide.with(itemView.context)
                 .load(item.sprites?.get(0))

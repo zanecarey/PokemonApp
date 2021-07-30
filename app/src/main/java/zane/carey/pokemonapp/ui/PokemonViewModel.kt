@@ -38,7 +38,7 @@ class PokemonViewModel : ViewModel() {
 //            returnedPoke = getPoke(5)
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
-            for(i in 1..50){
+            for(i in 1..10){
                 var returnedPoke = getPoke(i)
                 var extraInfo = getExtraPokeInfo(i)
                 var evoChain = getEvoChain(i)
