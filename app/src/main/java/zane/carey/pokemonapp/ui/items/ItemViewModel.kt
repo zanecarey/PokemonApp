@@ -38,8 +38,10 @@ class ItemViewModel : ViewModel() {
 
     fun testGetItem() {
         viewModelScope.launch(Dispatchers.IO) {
-            var returnedItem = getItem(0)
-            pokeDao.insertItem(convertItem(returnedItem))
+            for(i in 1..10){
+                var returnedItem = getItem(i)
+                pokeDao.insertItem(convertItem(returnedItem))
+            }
         }
     }
 

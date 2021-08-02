@@ -48,6 +48,7 @@ class ItemFragment: Fragment() {
         val layoutManager = GridLayoutManager(context, 2)
         itemRecyclerView.layoutManager = layoutManager
 
+        itemViewModel.testGetItem()
         itemViewModel.getItemList().observe(viewLifecycleOwner, Observer {
             val items: List<PokeItem> = it
             itemRecyclerView.adapter = ItemAdapter(items, view.context)

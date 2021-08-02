@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_poke_bio.*
 import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
+import kotlinx.android.synthetic.main.poke_list_item.view.*
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
@@ -47,6 +49,15 @@ class EvolutionFragment: Fragment() {
             pokemonValue?.let { pokemon ->
 
                 firstEvolutionTextView.text = pokemon.evolutionChain?.get(0).toString().capitalize()
+                vpViewModel.getByName(pokemon.evolutionChain?.get(0).toString()).observe(viewLifecycleOwner, Observer { evoValue ->
+                    evoValue?.let { poke ->
+                        Glide.with(this)
+                            .load(poke.sprites?.get(0))
+                            .placeholder(android.R.color.transparent)
+                            .into(firstEvoImage)
+                    }
+                })
+
                 //typeTextView.text = pokemon.type.toString()
 //                weightTextView.text = pokemon.weight.toString()
 //                heightTextView.text = pokemon.height.toString()

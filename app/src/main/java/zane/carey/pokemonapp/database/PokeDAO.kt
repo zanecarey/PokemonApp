@@ -9,6 +9,9 @@ interface PokeDAO {
     @Query("SELECT * FROM pokemon WHERE id = :id")
     fun getById(id: String?): LiveData<Pokemon>
 
+    @Query("SELECT * FROM pokemon WHERE name = :name")
+    fun getByName(name: String?): LiveData<Pokemon>
+
     @Query("SELECT * FROM pokemon")
     fun getAll(): LiveData<List<Pokemon>>
 

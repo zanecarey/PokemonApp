@@ -14,4 +14,7 @@ class ViewPagerViewModel : ViewModel(){
     fun getById(id: String?) : LiveData<Pokemon> {
         return pokeDao.getById(id)
     }
+    fun getByName(name: String?) : LiveData<Pokemon> {
+        return pokeDao.getByName(name)
+    }
 }
