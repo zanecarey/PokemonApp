@@ -66,7 +66,7 @@ class EvolutionFragment: Fragment() {
 
                         firstEvoImage.setOnClickListener{
 
-                            var idBundle = bundleOf("name" to evoName)
+                            var idBundle = bundleOf("name" to evoName.toLowerCase())
                             it.findNavController()
                                 .navigate(R.id.action_navigation_evolutionFragment_to_viewpager, idBundle)
                         }

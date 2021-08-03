@@ -1,6 +1,7 @@
 package zane.carey.pokemonapp.ui
 
 
+import android.text.TextUtils.substring
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
@@ -39,9 +40,11 @@ class PokemonViewModel : ViewModel() {
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
             for(i in 1..10){
-                var returnedPoke = getPoke(i)
-                var extraInfo = getExtraPokeInfo(i)
-                var evoChain = getEvoChain(i)
+                val returnedPoke = getPoke(i)
+                val extraInfo = getExtraPokeInfo(i)
+                //val chainLink = extraInfo.evolutionChain.name.substring(41,  extraInfo.evolutionChain.name.length -1).toInt()
+                val chainLink = extraInfo.evolutionChain.url.substring(42,  extraInfo.evolutionChain.url.length -1).toInt()
+                val evoChain = getEvoChain(chainLink.toInt())
                 pokeDAO.insert(convert(returnedPoke,extraInfo,evoChain))
             }
 //            var returnedPoke = getPoke(1)
@@ -69,11 +72,9 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.stats[4].baseStat,//spDefense
             pokemonResults.stats[5].baseStat,//speed
             pokemonSpecies.flavorTextEntries[1].flavorText,
-            //listOf(pokemonResults.types[0].type.name, pokemonResults.types[1].type.name),
             pokemonResults.types,
             listOf(evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
-            //listOf(pokemonResults.abilities[0].ability.name, pokemonResults.abilities[1].ability.name),
             listOf(pokemonResults.abilities[0].ability.name),
             listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
             pokemonSpecies.genderRate,

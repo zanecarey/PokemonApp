@@ -152,7 +152,8 @@ data class PokemonSpecies(
     val shape: NamedApiResource,
     @SerializedName("evolves_from_species")
     val evolvesFromSpecies: NamedApiResource?,
-    //val evolutionChain: ApiResource,
+    @SerializedName("evolution_chain")
+    val evolutionChain: ApiResource,
     @SerializedName("habitat")
     val habitat: NamedApiResource?,
     @SerializedName("generation")

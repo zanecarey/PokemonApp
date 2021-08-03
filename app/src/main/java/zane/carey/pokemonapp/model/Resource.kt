@@ -4,17 +4,20 @@ package zane.carey.pokemonapp.model
 interface ResourceSummary {
     val id: Int
     val category: String
+    val url: String
 }
 
 data class ApiResource(
     override val category: String,
-    override val id: Int
+    override val id: Int,
+    override val url: String
 ) : ResourceSummary
 
 data class NamedApiResource(
     val name: String,
     override val category: String,
-    override val id: Int
+    override val id: Int,
+    override val url: String
 ) : ResourceSummary
 
 data class Name(

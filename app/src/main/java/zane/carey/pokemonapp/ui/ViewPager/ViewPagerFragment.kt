@@ -21,6 +21,7 @@ class ViewPagerFragment : Fragment() {
 
     private lateinit var vpViewModel: ViewPagerViewModel
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
@@ -39,10 +40,10 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val evoName = arguments?.getString("name")
-        var pokeID = "4"
-        if(!evoName.isNullOrEmpty()){
-            vpViewModel.getByName(evoName).observe(viewLifecycleOwner, Observer { evoValue ->
+        var pokeID = "1"
+
+        if(arguments?.getString("name") != null){
+            vpViewModel.getByName(arguments?.getString("name")).observe(viewLifecycleOwner, Observer { evoValue ->
                 evoValue?.let { poke ->
                     pokeID = poke.id
                 }
