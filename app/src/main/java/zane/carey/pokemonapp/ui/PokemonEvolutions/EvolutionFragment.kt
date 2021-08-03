@@ -55,9 +55,29 @@ class EvolutionFragment: Fragment() {
             pokemonValue?.let { pokemon ->
 
                 //get images for the first evolution pokemon
-                val evoName = pokemon.evolutionChain?.get(0).toString().capitalize()
-                firstEvolutionTextView.text = evoName
-                vpViewModel.getByName(evoName.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
+                val baseEvoName = pokemon.evolutionChain?.get(0)
+                val firstEvoName = pokemon.evolutionChain?.get(1)
+                val secondEvoName = pokemon.evolutionChain?.get(2)
+
+                //baseEvolutionTextView.text = baseEvoName
+                vpViewModel.getByName(baseEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
+                    evoValue?.let { poke ->
+                        Glide.with(this)
+                            .load(poke.sprites?.get(0))
+                            .placeholder(android.R.color.transparent)
+                            .into(baseEvoImage)
+
+                        baseEvoImage.setOnClickListener{
+
+                            var idBundle = bundleOf("name" to baseEvoName?.toLowerCase())
+                            it.findNavController()
+                                .navigate(R.id.action_navigation_evolutionFragment_to_viewpager, idBundle)
+                        }
+                    }
+                })
+
+                //firstEvolutionTextView.text = firstEvoName
+                vpViewModel.getByName(firstEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
                     evoValue?.let { poke ->
                         Glide.with(this)
                             .load(poke.sprites?.get(0))
@@ -66,7 +86,24 @@ class EvolutionFragment: Fragment() {
 
                         firstEvoImage.setOnClickListener{
 
-                            var idBundle = bundleOf("name" to evoName.toLowerCase())
+                            var idBundle = bundleOf("name" to firstEvoName?.toLowerCase())
+                            it.findNavController()
+                                .navigate(R.id.action_navigation_evolutionFragment_to_viewpager, idBundle)
+                        }
+                    }
+                })
+
+                //secondEvolutionTextView.text = secondEvoName
+                vpViewModel.getByName(secondEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
+                    evoValue?.let { poke ->
+                        Glide.with(this)
+                            .load(poke.sprites?.get(0))
+                            .placeholder(android.R.color.transparent)
+                            .into(secondEvoImage)
+
+                        secondEvoImage.setOnClickListener{
+
+                            var idBundle = bundleOf("name" to secondEvoName?.toLowerCase())
                             it.findNavController()
                                 .navigate(R.id.action_navigation_evolutionFragment_to_viewpager, idBundle)
                         }

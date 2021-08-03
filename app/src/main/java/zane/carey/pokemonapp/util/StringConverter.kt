@@ -3,6 +3,7 @@ package zane.carey.pokemonapp.util
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import zane.carey.pokemonapp.model.EvolutionChain
 import zane.carey.pokemonapp.repository.PokemonType
 import java.lang.reflect.Type
 
@@ -10,6 +11,7 @@ class StringConverter {
     val gson = Gson()
     val type: Type = object : TypeToken<List<String?>?>() {}.type
     val type2: Type = object : TypeToken<List<PokemonType?>?>() {}.type
+    val evolutionChain: Type = object : TypeToken<EvolutionChain>() {}.type
 
     @TypeConverter
     fun fromString(json: String?): List<String> {

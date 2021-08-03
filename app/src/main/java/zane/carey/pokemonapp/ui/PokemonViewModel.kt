@@ -39,7 +39,7 @@ class PokemonViewModel : ViewModel() {
 //            returnedPoke = getPoke(5)
 //            pokeDAO.insert(convert(returnedPoke))
             //Get the rest of the pokemon info
-            for(i in 1..10){
+            for(i in 1..9){
                 val returnedPoke = getPoke(i)
                 val extraInfo = getExtraPokeInfo(i)
                 //val chainLink = extraInfo.evolutionChain.name.substring(41,  extraInfo.evolutionChain.name.length -1).toInt()
@@ -73,7 +73,8 @@ class PokemonViewModel : ViewModel() {
             pokemonResults.stats[5].baseStat,//speed
             pokemonSpecies.flavorTextEntries[1].flavorText,
             pokemonResults.types,
-            listOf(evolutionChain.chain.evolvesTo[0].species.name),
+            listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name, evolutionChain.chain.evolvesTo[0].evolvesTo[0].species.name),
+            //listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
             listOf(pokemonResults.abilities[0].ability.name),
             listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
