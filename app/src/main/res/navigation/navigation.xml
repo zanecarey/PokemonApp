@@ -12,25 +12,25 @@
         tools:layout="@layout/fragment_home_screen">
         <action
             android:id="@+id/action_navigation_main_to_navigation_pokemon"
-            app:destination="@id/navigation_pokemon"/>
+            app:destination="@id/navigation_pokemon" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_types"
-            app:destination="@id/navigation_types"/>
+            app:destination="@id/navigation_types" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_item"
-            app:destination="@id/navigation_poke_item"/>
+            app:destination="@id/navigation_poke_item" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_moves"
-            app:destination="@id/navigation_poke_moves"/>
+            app:destination="@id/navigation_poke_moves" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_regions"
-            app:destination="@id/navigation_poke_regions"/>
+            app:destination="@id/navigation_poke_regions" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_gens"
-            app:destination="@id/navigation_poke_regions"/>
+            app:destination="@id/navigation_poke_regions" />
         <action
             android:id="@+id/action_navigation_main_to_navigation_poke_viewpager"
-            app:destination="@id/navigation_viewpager"/>
+            app:destination="@id/navigation_viewpager" />
 
     </fragment>
 
@@ -38,7 +38,7 @@
         android:id="@+id/navigation_pokemon"
         android:name="zane.carey.pokemonapp.ui.PokemonFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_pokemon" >
+        tools:layout="@layout/fragment_pokemon">
         <action
             android:id="@+id/action_navigation_pokemon_to_navigation_viewpager"
             app:destination="@id/navigation_viewpager" />
@@ -50,7 +50,7 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
-            app:destination="@id/navigation_item_display"/>
+            app:destination="@id/navigation_item_display" />
     </fragment>
 
     <fragment
@@ -59,7 +59,7 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_navigation_poke_gens_to_navigation_gens_display"
-            app:destination="@id/navigation_item_display"/>
+            app:destination="@id/navigation_item_display" />
     </fragment>
 
     <fragment
@@ -68,7 +68,7 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
-            app:destination="@id/navigation_item_display"/>
+            app:destination="@id/navigation_item_display" />
     </fragment>
 
     <fragment
@@ -77,38 +77,34 @@
         android:label="@string/app_name">
         <action
             android:id="@+id/action_navigation_poke_item_to_navigation_item_display"
-            app:destination="@id/navigation_region_display"/>
+            app:destination="@id/navigation_region_display" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_item_display"
         android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
-        android:label="@string/app_name">
-    </fragment>
+        android:label="@string/app_name"></fragment>
 
     <fragment
         android:id="@+id/navigation_move_display"
         android:name="zane.carey.pokemonapp.ui.moves.MoveDisplay"
-        android:label="@string/app_name">
-    </fragment>
+        android:label="@string/app_name"></fragment>
 
     <fragment
         android:id="@+id/navigation_region_display"
         android:name="zane.carey.pokemonapp.ui.regions.RegionDisplay"
-        android:label="@string/app_name">
-    </fragment>
+        android:label="@string/app_name"></fragment>
 
     <fragment
         android:id="@+id/navigation_gens_display"
         android:name="zane.carey.pokemonapp.ui.generation.GenerationDisplay"
-        android:label="@string/app_name">
-    </fragment>
+        android:label="@string/app_name"></fragment>
 
     <fragment
         android:id="@+id/navigation_types"
         android:name="zane.carey.pokemonapp.ui.types.TypesFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_types" >
+        tools:layout="@layout/fragment_types">
         <action
             android:id="@+id/action_navigation_pokemon_to_navigation_viewpager"
             app:destination="@id/navigation_viewpager" />
@@ -117,12 +113,26 @@
     <fragment
         android:id="@+id/navigation_search"
         android:name="zane.carey.pokemonapp.ui.PokemonSearch.SearchFragment"
-        tools:layout="@layout/fragment_poke_search"/>
+        tools:layout="@layout/fragment_poke_search" />
 
     <fragment
         android:id="@+id/navigation_viewpager"
         android:name="zane.carey.pokemonapp.ui.ViewPager.ViewPagerFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_viewpager" />
+        tools:layout="@layout/fragment_viewpager">
+        <action
+            android:id="@+id/action_navigation_evolutionFragment_to_viewpager"
+            app:destination="@id/navigation_viewpager" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_evolutionFragment"-->
+<!--        android:name="zane.carey.pokemonapp.ui.ViewPager.ViewPagerFragment"-->
+<!--        android:label="@string/app_name"-->
+<!--        tools:layout="@layout/fragment_viewpager">-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_evolutionFragment_to_viewpager"-->
+<!--            app:destination="@id/navigation_viewpager" />-->
+<!--    </fragment>-->
 
 </navigation>

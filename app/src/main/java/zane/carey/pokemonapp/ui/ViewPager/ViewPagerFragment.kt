@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import zane.carey.pokemonapp.R
 
@@ -20,6 +24,8 @@ class ViewPagerFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
+
+
     }
 
     override fun onCreateView(
@@ -33,7 +39,19 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pokeID = arguments?.getString("id")
+        val evoName = arguments?.getString("name")
+        var pokeID = "4"
+        if(!evoName.isNullOrEmpty()){
+            vpViewModel.getByName(evoName).observe(viewLifecycleOwner, Observer { evoValue ->
+                evoValue?.let { poke ->
+                    pokeID = poke.id
+                }
+            })
+        } else {
+            pokeID = arguments?.getString("id").toString()
+        }
+        //val pokeID = arguments?.getString("id")
+
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
@@ -59,4 +77,6 @@ class ViewPagerFragment : Fragment() {
             }
         })
     }
+
+
 }
