@@ -19,7 +19,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
         fun bindView(item: Pokemon) {
 
             itemView.pokemonName.text = item.name
-            itemView.setOnClickListener{
+            itemView.item_cardView.setOnClickListener{
                 var idBundle = bundleOf("id" to item.id)
 
                 it.findNavController()
