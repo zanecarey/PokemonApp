@@ -1,5 +1,6 @@
 package zane.carey.pokemonapp.ui.ViewPager
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import zane.carey.pokemonapp.R
+import zane.carey.pokemonapp.util.ColorConverter
 
 class ViewPagerFragment : Fragment() {
 
@@ -42,6 +44,7 @@ class ViewPagerFragment : Fragment() {
 
         var pokeID = "1"
 
+
         if(arguments?.getString("name") != null){
             vpViewModel.getByName(arguments?.getString("name")).observe(viewLifecycleOwner, Observer { evoValue ->
                 evoValue?.let { poke ->
@@ -56,6 +59,7 @@ class ViewPagerFragment : Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
+                appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
                 pokemonNameTextView.text = pokemon.name?.capitalize()
                 IDTextView.text = "#" + pokemon.id
 
