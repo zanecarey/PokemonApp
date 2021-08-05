@@ -20,6 +20,7 @@ import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.repository.PokeAPI
 import zane.carey.pokemonapp.repository.PokemonResults
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
+import zane.carey.pokemonapp.ui.genfilter.GenFilterFragment
 
 class PokemonFragment: Fragment(){
 
@@ -47,10 +48,19 @@ class PokemonFragment: Fragment(){
         val layoutManager = GridLayoutManager(context, 1)
         pokemonRecyclerView.layoutManager = layoutManager
 
-        pokeViewModel.testGet()
+        floatingActionButton.setOnClickListener{
+            //bring up type selection
+            showTypeSelect()
+        }
+        //pokeViewModel.testGet()
         pokeViewModel.getPokemonList().observe(viewLifecycleOwner, Observer {
             val pokemons: List<Pokemon> = it
             pokedexRecyclerView.adapter = PokemonAdapter(pokemons, view.context)
         })
+    }
+
+    private fun showTypeSelect() {
+        val dialog = GenFilterFragment()
+        dialog.show(requireFragmentManager(), "")
     }
 }
