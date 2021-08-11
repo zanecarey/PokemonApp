@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_generation.view.*
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Generation
 import zane.carey.pokemonapp.ui.PokemonAdapter
 
 class GenFilterAdapter(private val list: List<Generation>, private val context: Context): RecyclerView.Adapter<GenFilterAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenFilterAdapter.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_generation, parent, false)
         return ViewHolder(view)
@@ -26,8 +28,8 @@ class GenFilterAdapter(private val list: List<Generation>, private val context: 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(item: Generation) {
-            itemView.textViewTitle.text = item.title
-            itemView.imageView.setImageResource(item.image)
+            itemView.generationTitle.text = item.title
+            itemView.generationImageView.setImageResource(item.image)
         }
     }
 }
