@@ -19,6 +19,13 @@
     <string name="stats">Stats</string>
     <string name="evolutions">Evolutions</string>
     <string name="pokemon_flavor_text">Flavor text:</string>
-    <string name="gen1">Generation I text:</string>
+    <string name="gen1">Generation I</string>
+    <string name="gen2">Generation II</string>
+    <string name="gen3">Generation III</string>
+    <string name="gen4">Generation IV text:</string>
+    <string name="gen5">Generation V text:</string>
+    <string name="gen6">Generation VI text:</string>
+    <string name="gen7">Generation VII text:</string>
+    <string name="gen8">Generation VIII text:</string>
     <string name="generations">Generations</string>
 </resources>
