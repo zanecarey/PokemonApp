@@ -1,6 +1,7 @@
 package zane.carey.pokemonapp.ui
 
 
+import android.content.Context
 import android.text.TextUtils.substring
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,7 @@ import zane.carey.pokemonapp.repository.PokemonResults
 import zane.carey.pokemonapp.repository.PokemonSpecies
 import kotlin.concurrent.thread
 
-class PokemonViewModel : ViewModel() {
+class PokemonViewModel(private val context: Context) : ViewModel() {
 
     private val pokeDAO: PokeDAO = App.database.pokeDao()
 

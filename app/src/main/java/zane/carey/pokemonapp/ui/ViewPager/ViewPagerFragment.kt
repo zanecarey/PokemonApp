@@ -16,20 +16,22 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
+import org.koin.android.viewmodel.compat.ViewModelCompat.viewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.util.ColorConverter
 
 class ViewPagerFragment : Fragment() {
 
-    private lateinit var vpViewModel: ViewPagerViewModel
+    private val vpViewModel: ViewPagerViewModel by viewModel()
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
-
-
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
+//
+//
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

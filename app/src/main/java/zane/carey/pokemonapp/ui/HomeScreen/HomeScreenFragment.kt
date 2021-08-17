@@ -13,6 +13,7 @@ import androidx.lifecycle.liveData
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.coroutines.Dispatchers
+import org.koin.android.viewmodel.ext.android.viewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,15 +28,15 @@ import kotlin.concurrent.thread
 
 class HomeScreenFragment: Fragment() {
 
-    private lateinit var homeScreenViewModel: HomeScreenViewModel
+    private val hSViewModel: HomeScreenViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        homeScreenViewModel = ViewModelProvider(this).get(HomeScreenViewModel::class.java)
-
-
-
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        hSViewModel = ViewModelProvider(this).get(HomeScreenViewModel::class.java)
+//
+//
+//
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,7 +53,7 @@ class HomeScreenFragment: Fragment() {
 
         categoryRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
-        homeScreenViewModel.getListMenu().observe(viewLifecycleOwner, Observer {
+        hSViewModel.getListMenu().observe(viewLifecycleOwner, Observer {
             val items: List<Category> = it
             categoryRecyclerView.adapter = CategoryAdapter(items, view.context)
         })

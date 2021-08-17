@@ -7,6 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import zane.carey.pokemonapp.database.PokeDatabase
+import zane.carey.pokemonapp.di.appComponent
 
 class App: Application() {
 
@@ -19,11 +20,10 @@ class App: Application() {
         super.onCreate()
         context = this
 
-//        startKoin {
-//            androidLogger()
-//            androidContext(this@App)
-//            modules(listOf(module1, module2))
-//        }
+        startKoin {
+            androidContext(this@App)
+            modules(appComponent)
+        }
 
         database = Room.databaseBuilder(
             this,

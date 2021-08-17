@@ -24,13 +24,13 @@ import zane.carey.pokemonapp.ui.genfilter.GenFilterFragment
 
 class PokemonFragment : Fragment() {
 
-    private lateinit var pokeViewModel: PokemonViewModel
+    private val pokeViewModel: PokemonViewModel by viewModel()
     private val pokeDAO: PokeDAO = App.database.pokeDao()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        pokeViewModel = ViewModelProvider(this).get(PokemonViewModel::class.java)
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        pokeViewModel = ViewModelProvider(this).get(PokemonViewModel::class.java)
+//    }
 
 
     override fun onCreateView(

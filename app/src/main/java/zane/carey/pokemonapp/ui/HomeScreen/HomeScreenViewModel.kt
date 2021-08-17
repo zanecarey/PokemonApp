@@ -1,5 +1,6 @@
 package zane.carey.pokemonapp.ui.HomeScreen
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -11,7 +12,7 @@ import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Category
 import zane.carey.pokemonapp.ui.PokemonViewModel
 
-class HomeScreenViewModel : ViewModel() {
+class HomeScreenViewModel(private val context: Context) : ViewModel() {
 
     private val listMenu = MutableLiveData<List<Category>>()
 
