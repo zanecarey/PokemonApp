@@ -16,26 +16,26 @@ import zane.carey.pokemonapp.model.Generation
 
 class GenFilterFragment: BottomSheetDialogFragment() {
 
-    private val generationViewModel: GenFilterViewModel by viewModel()
+    private val genFilterViewModel: GenFilterViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_generation, container, false)
+        return inflater.inflate(R.layout.fragment_gen_filter, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = genFilterRecyclerView
+        val rV = genFilterRecyclerView
         val layoutManager = GridLayoutManager(context, 2)
-        recyclerView.layoutManager = layoutManager
+        rV.layoutManager = layoutManager
 
-        generationViewModel.getListGeneration().observe(viewLifecycleOwner, Observer {
+        genFilterViewModel.getListGeneration().observe(viewLifecycleOwner, Observer {
             val pokemons: List<Generation> = it
-            recyclerView.adapter = GenFilterAdapter(pokemons, view.context)
+            rV.adapter = GenFilterAdapter(pokemons, view.context)
         })
     }
 }
