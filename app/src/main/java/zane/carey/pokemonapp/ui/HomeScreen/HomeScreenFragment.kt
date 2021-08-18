@@ -30,14 +30,6 @@ class HomeScreenFragment: Fragment() {
 
     private val hSViewModel: HomeScreenViewModel by viewModel()
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        hSViewModel = ViewModelProvider(this).get(HomeScreenViewModel::class.java)
-//
-//
-//
-//    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

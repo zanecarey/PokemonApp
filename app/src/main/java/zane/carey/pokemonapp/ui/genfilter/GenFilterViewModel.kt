@@ -16,7 +16,7 @@ class GenFilterViewModel(private val context: Context) : ViewModel() {
             Generation(
                 1,
                 context.resources.getString(R.string.gen1),
-                R.drawable.gen1
+                R.drawable.trio
             ),
             Generation(
                 1,
