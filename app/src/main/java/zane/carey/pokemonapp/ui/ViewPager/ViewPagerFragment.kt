@@ -79,7 +79,7 @@ class ViewPagerFragment : Fragment() {
                 val viewPager = viewPager
                 val pagerTabs = pagerTabs
                 viewPager.adapter =
-                    ViewPagerAdapter(requireFragmentManager(), requireContext(), pokemon.id)
+                    ViewPagerAdapter(parentFragmentManager, requireContext(), pokemon.id)
                 pagerTabs.setupWithViewPager(viewPager)
             }
         })

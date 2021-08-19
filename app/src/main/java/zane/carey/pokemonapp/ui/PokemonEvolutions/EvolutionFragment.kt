@@ -15,8 +15,10 @@ import kotlinx.android.synthetic.main.fragment_poke_bio.*
 import kotlinx.android.synthetic.main.fragment_poke_evolutions.*
 import kotlinx.android.synthetic.main.fragment_viewpager.*
 import kotlinx.android.synthetic.main.poke_list_item.view.*
+import org.koin.android.viewmodel.ext.android.viewModel
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
+import zane.carey.pokemonapp.ui.PokemonViewModel
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerAdapter
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerFragment
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
@@ -32,12 +34,12 @@ class EvolutionFragment: Fragment() {
         }
     }
 
-    private lateinit var vpViewModel: ViewPagerViewModel
+    private val vpViewModel: ViewPagerViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        vpViewModel = ViewModelProvider(this).get(ViewPagerViewModel::class.java)
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
