@@ -44,45 +44,95 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var pokeID = "1"
+        var pokeID = "4"
 
 
         if(arguments?.getString("name") != null){
             vpViewModel.getByName(arguments?.getString("name")).observe(viewLifecycleOwner, Observer { evoValue ->
                 evoValue?.let { poke ->
-                    pokeID = poke.id
+                    //pokeID = poke.id
+                    vpViewModel.getByName(poke.name?.toLowerCase()).observe(viewLifecycleOwner, Observer { pokemonValue ->
+                        pokemonValue?.let { pokemon ->
+
+                            appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
+                            pokemonNameTextView.text = pokemon.name?.capitalize()
+                            IDTextView.text = "#" + pokemon.id
+
+                            pokemon.type.let{ firstType ->
+                                //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
+                                textViewType1.text = firstType!![0].type.name
+
+                            }
+
+                            Glide.with(view.context)
+                                .load(pokemon.sprites?.get(1))
+                                .placeholder(android.R.drawable.btn_star)
+                                .into(pokemonImageView)
+
+                            val viewPager = viewPager
+                            val pagerTabs = pagerTabs
+                            viewPager.adapter =
+                                ViewPagerAdapter(parentFragmentManager, requireContext(), pokemon.id)
+                            pagerTabs.setupWithViewPager(viewPager)
+                        }
+                    })
                 }
             })
         } else {
             pokeID = arguments?.getString("id").toString()
+            vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
+                pokemonValue?.let { pokemon ->
+
+                    appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
+                    pokemonNameTextView.text = pokemon.name?.capitalize()
+                    IDTextView.text = "#" + pokemon.id
+
+                    pokemon.type.let{ firstType ->
+                        //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
+                        textViewType1.text = firstType!![0].type.name
+
+                    }
+
+                    Glide.with(view.context)
+                        .load(pokemon.sprites?.get(1))
+                        .placeholder(android.R.drawable.btn_star)
+                        .into(pokemonImageView)
+
+                    val viewPager = viewPager
+                    val pagerTabs = pagerTabs
+                    viewPager.adapter =
+                        ViewPagerAdapter(parentFragmentManager, requireContext(), pokemon.id)
+                    pagerTabs.setupWithViewPager(viewPager)
+                }
+            })
         }
         //val pokeID = arguments?.getString("id")
 
-        vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
-            pokemonValue?.let { pokemon ->
-
-                appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
-                pokemonNameTextView.text = pokemon.name?.capitalize()
-                IDTextView.text = "#" + pokemon.id
-
-                pokemon.type.let{ firstType ->
-                    //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
-                    textViewType1.text = firstType!![0].type.name
-
-                }
-
-                Glide.with(view.context)
-                    .load(pokemon.sprites?.get(1))
-                    .placeholder(android.R.drawable.btn_star)
-                    .into(pokemonImageView)
-
-                val viewPager = viewPager
-                val pagerTabs = pagerTabs
-                viewPager.adapter =
-                    ViewPagerAdapter(parentFragmentManager, requireContext(), pokemon.id)
-                pagerTabs.setupWithViewPager(viewPager)
-            }
-        })
+//        vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
+//            pokemonValue?.let { pokemon ->
+//
+//                appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
+//                pokemonNameTextView.text = pokemon.name?.capitalize()
+//                IDTextView.text = "#" + pokemon.id
+//
+//                pokemon.type.let{ firstType ->
+//                    //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
+//                    textViewType1.text = firstType!![0].type.name
+//
+//                }
+//
+//                Glide.with(view.context)
+//                    .load(pokemon.sprites?.get(1))
+//                    .placeholder(android.R.drawable.btn_star)
+//                    .into(pokemonImageView)
+//
+//                val viewPager = viewPager
+//                val pagerTabs = pagerTabs
+//                viewPager.adapter =
+//                    ViewPagerAdapter(parentFragmentManager, requireContext(), pokemon.id)
+//                pagerTabs.setupWithViewPager(viewPager)
+//            }
+//        })
     }
 
 
