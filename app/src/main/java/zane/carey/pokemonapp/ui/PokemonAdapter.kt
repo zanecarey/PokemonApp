@@ -29,6 +29,8 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
             itemView.type1.text = item.type?.get(0)!!.type.name
             if(item.type!!.size >= 2){
                 itemView.type2.text = item.type?.getOrNull(1)!!.type.name
+            } else {
+                itemView.type2.text = "-1"
             }
 
             Glide.with(itemView.context)

@@ -44,7 +44,7 @@ class ViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var pokeID = "4"
+        var pokeID = "1"
 
 
         if(arguments?.getString("name") != null){
@@ -134,6 +134,4 @@ class ViewPagerFragment : Fragment() {
 //            }
 //        })
     }
-
-
 }

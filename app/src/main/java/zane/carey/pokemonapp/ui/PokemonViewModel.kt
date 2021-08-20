@@ -60,6 +60,20 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
     }
 
     fun convert(pokemonResults: PokemonResults, pokemonSpecies: PokemonSpecies, evolutionChain: EvolutionChain): Pokemon {
+
+
+        var chainList = mutableListOf(evolutionChain.chain.species.name)
+
+        if(!evolutionChain.chain.evolvesTo.isEmpty()){
+            chainList.add(evolutionChain.chain.evolvesTo[0].species.name)
+            if(!evolutionChain.chain.evolvesTo[0].evolvesTo.isEmpty()){
+                chainList.add(evolutionChain.chain.evolvesTo[0].evolvesTo[0].species.name)
+            }
+        }
+
+        var abilityList = mutableListOf(pokemonResults.abilities[0].ability.name)
+
+
         return Pokemon(
             pokemonResults.id,
             pokemonResults.name,
@@ -74,7 +88,8 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             pokemonResults.stats[5].baseStat,//speed
             pokemonSpecies.flavorTextEntries[1].flavorText,
             pokemonResults.types,
-            listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name, evolutionChain.chain.evolvesTo[0].evolvesTo[0].species.name),
+            chainList,
+            //listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name, evolutionChain.chain.evolvesTo[0].evolvesTo[0].species.name),
             //listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
             listOf(pokemonResults.abilities[0].ability.name),
@@ -90,6 +105,7 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             pokemonSpecies.generation.name
         )
     }
+
 
     suspend fun getPoke(id : Int) = PokeAPI.pokemonService.getPokemon(id)
     suspend fun getExtraPokeInfo(id : Int) = PokeAPI.pokemonService.getPokemonSpecies(id)
