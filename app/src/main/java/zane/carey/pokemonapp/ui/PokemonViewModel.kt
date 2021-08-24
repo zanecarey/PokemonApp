@@ -64,6 +64,7 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
 
         var chainList = mutableListOf(evolutionChain.chain.species.name)
 
+        //make list of evolution
         if(!evolutionChain.chain.evolvesTo.isEmpty()){
             chainList.add(evolutionChain.chain.evolvesTo[0].species.name)
             if(!evolutionChain.chain.evolvesTo[0].evolvesTo.isEmpty()){
@@ -71,8 +72,14 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             }
         }
 
+        //make list of abilities
         var abilityList = mutableListOf(pokemonResults.abilities[0].ability.name)
-
+//        for(i in 1..pokemonResults.abilities.size){
+//            abilityList.add(pokemonResults.abilities[i].ability.name)
+//        }
+        for(a in pokemonResults.abilities.indices){
+            abilityList.add(pokemonResults.abilities[a].ability.name)
+        }
 
         return Pokemon(
             pokemonResults.id,
@@ -92,7 +99,8 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             //listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name, evolutionChain.chain.evolvesTo[0].evolvesTo[0].species.name),
             //listOf(evolutionChain.chain.species.name, evolutionChain.chain.evolvesTo[0].species.name),
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
-            listOf(pokemonResults.abilities[0].ability.name),
+            //listOf(pokemonResults.abilities[0].ability.name),
+            abilityList,
             listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
             pokemonSpecies.genderRate,
             pokemonSpecies.captureRate,
