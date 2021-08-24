@@ -56,6 +56,7 @@ class BioFragment: Fragment() {
                 weightTextView.text = pokemon.weight.toString()
                 heightTextView.text = pokemon.height.toString()
                 baseXPTextView.text = pokemon.baseXP.toString()
+                genderRateTextView.text = pokemon.genderRate.toString()
             }
         })
     }

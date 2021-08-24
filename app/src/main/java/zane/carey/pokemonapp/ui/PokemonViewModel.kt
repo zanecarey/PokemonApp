@@ -81,6 +81,12 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             abilityList.add(pokemonResults.abilities[a].ability.name)
         }
 
+        //make list of moves
+        var moveList = mutableListOf(pokemonResults.moves[0].move.name)
+        for(m in pokemonResults.moves.indices){
+            moveList.add(pokemonResults.moves[m].move.name)
+        }
+
         return Pokemon(
             pokemonResults.id,
             pokemonResults.name,
@@ -101,7 +107,8 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
             listOf(pokemonResults.sprites.backDefault,pokemonResults.sprites.frontDefault),
             //listOf(pokemonResults.abilities[0].ability.name),
             abilityList,
-            listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
+            //listOf(pokemonResults.moves[0].move.name, pokemonResults.moves[1].move.name),
+            moveList,
             pokemonSpecies.genderRate,
             pokemonSpecies.captureRate,
             pokemonSpecies.baseHappiness,
