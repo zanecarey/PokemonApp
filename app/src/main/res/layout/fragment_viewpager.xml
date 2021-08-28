@@ -60,7 +60,9 @@
                         android:id="@+id/type1CardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/blue">
+                        app:cardBackgroundColor="#EF867E"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true">
 
                         <TextView
                             android:id="@+id/textViewType1"
@@ -70,22 +72,31 @@
                             android:layout_alignParentBottom="true"
                             android:paddingStart="8dp"
                             android:paddingEnd="8dp"
-                            android:textColor="#fff"
+                            android:textColor="#FFF"
                             android:textSize="14sp" />
                     </androidx.cardview.widget.CardView>
 
 
-                    <TextView
-                        android:id="@+id/textViewType2"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/type2CardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
+                        app:cardBackgroundColor="#EF867E"
                         android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@id/type1CardView"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:textColor="#fff"
-                        android:textSize="14sp" />
+                        android:layout_toEndOf="@id/type1CardView">
+
+                        <TextView
+                            android:id="@+id/textViewType2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:textColor="#fff"
+                            android:textSize="14sp" />
+                    </androidx.cardview.widget.CardView>
+
 
                 </RelativeLayout>
 
