@@ -31,6 +31,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 itemView.type2.text = item.type?.getOrNull(1)!!.type.name
             } else {
                 itemView.type2.text = "-1"
+                itemView.type2.visibility = View.INVISIBLE
             }
 
             Glide.with(itemView.context)

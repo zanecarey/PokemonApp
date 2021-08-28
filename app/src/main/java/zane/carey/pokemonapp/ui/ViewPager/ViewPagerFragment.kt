@@ -86,10 +86,12 @@ class ViewPagerFragment : Fragment() {
                     appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
                     pokemonNameTextView.text = pokemon.name?.capitalize()
                     IDTextView.text = "#" + pokemon.id
+                    textViewType2.text = pokemon.type?.get(1)?.type?.name ?: "-1"
 
                     pokemon.type.let{ firstType ->
                         //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()
                         textViewType1.text = firstType!![0].type.name
+
 
                     }
 
