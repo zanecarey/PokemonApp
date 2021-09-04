@@ -54,9 +54,10 @@ class ViewPagerFragment : Fragment() {
                     vpViewModel.getByName(poke.name?.toLowerCase()).observe(viewLifecycleOwner, Observer { pokemonValue ->
                         pokemonValue?.let { pokemon ->
 
+                            //change colors based on pokemons type
                             appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
                             type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
-                            type2CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(1)?.type?.name))
+                            type2CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
                             pokemonNameTextView.text = pokemon.name?.capitalize()
                             IDTextView.text = "#" + pokemon.id
 
@@ -87,10 +88,14 @@ class ViewPagerFragment : Fragment() {
 
                     appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
                     type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
-                    type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(1)?.type?.name))
+                    if(pokemon.type!!.size >= 2){
+                        type2CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
+                    } else {
+                        type2CardView.visibility = View.GONE
+                    }
                     pokemonNameTextView.text = pokemon.name?.capitalize()
                     IDTextView.text = "#" + pokemon.id
-                    textViewType2.text = pokemon.type?.get(1)?.type?.name ?: "-1"
+                    //textViewType2.text = pokemon.type?.get(1)?.type?.name ?: "-1"
 
                     pokemon.type.let{ firstType ->
                         //textViewType1.text = firstType.toString().substring(1, firstType.toString().length - 1).capitalize()

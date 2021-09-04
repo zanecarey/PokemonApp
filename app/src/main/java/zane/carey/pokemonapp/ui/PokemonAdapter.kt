@@ -9,8 +9,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.poke_list_item.view.*
+import zane.carey.pokemonapp.App.Companion.context
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Pokemon
+import zane.carey.pokemonapp.util.ColorConverter
 
 class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: Context) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>(){
 
@@ -33,6 +35,8 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 itemView.type2.text = "-1"
                 itemView.type2.visibility = View.INVISIBLE
             }
+
+            itemView.item_cardView.setCardBackgroundColor(ColorConverter(context).getColor(item.type?.get(0)!!.type.name))
 
             Glide.with(itemView.context)
                 .load(item.sprites?.get(0))
