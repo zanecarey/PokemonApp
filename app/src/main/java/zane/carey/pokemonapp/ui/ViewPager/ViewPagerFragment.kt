@@ -55,6 +55,8 @@ class ViewPagerFragment : Fragment() {
                         pokemonValue?.let { pokemon ->
 
                             appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
+                            type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
+                            type2CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(1)?.type?.name))
                             pokemonNameTextView.text = pokemon.name?.capitalize()
                             IDTextView.text = "#" + pokemon.id
 
@@ -84,6 +86,8 @@ class ViewPagerFragment : Fragment() {
                 pokemonValue?.let { pokemon ->
 
                     appBarLayout.setBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
+                    type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
+                    type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(1)?.type?.name))
                     pokemonNameTextView.text = pokemon.name?.capitalize()
                     IDTextView.text = "#" + pokemon.id
                     textViewType2.text = pokemon.type?.get(1)?.type?.name ?: "-1"

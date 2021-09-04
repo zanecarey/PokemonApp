@@ -25,6 +25,22 @@ class ColorConverter(context : Context) {
     }
 
     @ColorInt
+    fun getLightColor(type: String?): Int {
+        val color = when (type?.toLowerCase()) {
+            "grass", "bug" -> R.color.light_green
+            "fire" -> R.color.light_red
+            "water", "fighting", "normal" -> R.color.light_blue
+            "electric", "psychic" -> R.color.light_yellow
+            "poison", "ghost" -> R.color.light_purple
+            "ground", "rock" -> R.color.light_brown
+            "dark" -> R.color.grey
+            else -> R.color.blue
+
+        }
+        return convertColor(color)
+    }
+
+    @ColorInt
     fun convertColor(@ColorRes color: Int): Int {
         return ContextCompat.getColor(context, color)
     }
