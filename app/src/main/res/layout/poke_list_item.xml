@@ -40,32 +40,38 @@
                 android:id="@+id/pokemonImage"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_below="@id/type1"
+                android:layout_below="@id/typeLinearLayout"
                 android:layout_centerInParent="true"
                 android:gravity="center">
 
             </ImageView>
 
-            <TextView
-                android:id="@+id/type1"
+            <LinearLayout
+                android:id="@+id/typeLinearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/pokemonName"
-                android:layout_centerInParent="true"
-                android:text="type1"
-                android:textSize="12sp" />
+                android:orientation="horizontal"
+                android:layout_below="@id/pokemonName"
+                android:layout_centerHorizontal="true">
 
-            <TextView
-                android:id="@+id/type2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/pokemonName"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/type1"
-                android:gravity="center"
-                android:text="type2"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="type1"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/type2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/type1"
+                    android:gravity="center"
+                    android:text="type2"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
 
         </RelativeLayout>
 
