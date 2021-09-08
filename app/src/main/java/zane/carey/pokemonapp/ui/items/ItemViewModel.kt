@@ -20,6 +20,11 @@ class ItemViewModel : ViewModel() {
     }
 
     fun convertItem(item: Item): PokeItem {
+        var itemsHeldList = mutableListOf("-1")
+        if(item.held_by_pokemon.isNotEmpty()){
+            itemsHeldList.clear()
+            itemsHeldList.add(item.held_by_pokemon[0].pokemon.name)
+        }
         return PokeItem(
             item.id,
             item.name,
@@ -31,8 +36,9 @@ class ItemViewModel : ViewModel() {
             item.effect_entries[0].effect,
             item.flavor_text_entries[0].text,
             listOf(item.names[0].name),
-            listOf(item.sprites.toString()),
-            listOf(item.held_by_pokemon[0].pokemon.name)
+            listOf(item.sprites.default),
+            //listOf(item.held_by_pokemon[0].pokemon.name),
+            itemsHeldList
         )
     }
 

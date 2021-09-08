@@ -10,8 +10,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_list_view.view.*
-import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.App.Companion.context
+import zane.carey.pokemonapp.App
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.model.Pokemon
 import zane.carey.pokemonapp.model.PokeItem

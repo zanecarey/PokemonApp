@@ -14,6 +14,7 @@ import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
 import zane.carey.pokemonapp.ui.PokemonViewModel
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
+import zane.carey.pokemonapp.util.ColorConverter
 
 
 class BioFragment: Fragment() {
@@ -57,6 +58,7 @@ class BioFragment: Fragment() {
                 heightTextView.text = pokemon.height.toString()
                 baseXPTextView.text = pokemon.baseXP.toString()
                 genderRateTextView.text = pokemon.genderRate.toString()
+                //bioCardView.setCardBackgroundColor(ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name))
             }
         })
     }
