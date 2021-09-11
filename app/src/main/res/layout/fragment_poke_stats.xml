@@ -39,7 +39,7 @@
                         android:layout_weight="1"
                         android:text="@string/hp"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/healthTextView"
@@ -48,8 +48,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarHP"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
 
@@ -66,7 +76,7 @@
                         android:layout_weight="1"
                         android:text="@string/attack"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/attackTextView"
@@ -75,8 +85,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarAttack"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
 
@@ -93,7 +113,7 @@
                         android:layout_weight="1"
                         android:text="@string/defense"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/defenseTextView"
@@ -102,8 +122,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarDef"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
 
@@ -120,7 +150,7 @@
                         android:layout_weight="1"
                         android:text="@string/special_attack"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/spAttackTextView"
@@ -129,8 +159,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpAtk"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
 
@@ -147,7 +187,7 @@
                         android:layout_weight="1"
                         android:text="@string/special_defense"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/spDefenceTextView"
@@ -156,8 +196,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpDef"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
 
@@ -174,7 +224,7 @@
                         android:layout_weight="1"
                         android:text="@string/speed"
                         android:textColor="@color/black"
-                        android:textSize="24sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/speedTextView"
@@ -183,8 +233,18 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:textColor="@color/black"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         tools:text="0" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarSpeed"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="4"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="50" />
 
                 </LinearLayout>
             </LinearLayout>
