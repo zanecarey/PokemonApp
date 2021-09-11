@@ -55,6 +55,12 @@ class StatsFragment: Fragment() {
                 spDefenceTextView.text = pokemon.spDefense.toString()
                 speedTextView.text = pokemon.speed.toString()
 
+                progressBarHP.progress = pokemon.health ?: 0
+                progressBarAttack.progress = pokemon.attack ?: 0
+                progressBarDef.progress = pokemon.defense ?: 0
+                progressBarSpAtk.progress = pokemon.spAttack ?: 0
+                progressBarSpDef.progress = pokemon.spDefense ?: 0
+                progressBarSpeed.progress = pokemon.speed ?: 0
             }
         })
     }
