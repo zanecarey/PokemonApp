@@ -21,7 +21,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
         fun bindView(item: Pokemon) {
 
             itemView.pokemonName.text = item.name?.capitalize()
-            itemView.item_cardView.setOnClickListener{
+            itemView.poke_item_cardView.setOnClickListener{
                 var idBundle = bundleOf("id" to item.id)
 
                 it.findNavController()
@@ -36,7 +36,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 itemView.type2.visibility = View.INVISIBLE
             }
 
-            itemView.item_cardView.setCardBackgroundColor(ColorConverter(context).getColor(item.type?.get(0)!!.type.name))
+            itemView.poke_item_cardView.setCardBackgroundColor(ColorConverter(context).getColor(item.type?.get(0)!!.type.name))
 
             Glide.with(itemView.context)
                 .load(item.sprites?.get(0))

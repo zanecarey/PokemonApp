@@ -22,7 +22,7 @@ class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context:
 
         fun bindView(pokeItem: PokeItem) {
             itemView.itemName.text = pokeItem.name
-            itemView.setOnClickListener {
+            itemView.item_cardView.setOnClickListener {
                 var idBundle = bundleOf("id" to pokeItem.id)
 
                 it.findNavController()
