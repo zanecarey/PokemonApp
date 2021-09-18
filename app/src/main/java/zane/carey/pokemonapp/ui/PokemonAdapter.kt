@@ -20,7 +20,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
 
         fun bindView(item: Pokemon) {
 
-            itemView.pokemonName.text = item.name
+            itemView.pokemonName.text = item.name?.capitalize()
             itemView.item_cardView.setOnClickListener{
                 var idBundle = bundleOf("id" to item.id)
 

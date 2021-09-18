@@ -28,11 +28,12 @@ class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context:
                 it.findNavController()
                     .navigate(R.id.action_navigation_poke_item_to_navigation_item_display, idBundle)
 
-                Glide.with(itemView.context)
-                    .load(pokeItem.sprites?.get(0))
-                    .placeholder(android.R.color.transparent)
-                    .into(itemView.itemImage)
+
             }
+            Glide.with(itemView.context)
+                .load(pokeItem.sprites?.get(0))
+                .placeholder(android.R.color.transparent)
+                .into(itemView.itemImage)
         }
     }
 
