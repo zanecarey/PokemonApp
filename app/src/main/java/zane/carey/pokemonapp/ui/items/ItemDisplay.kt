@@ -15,7 +15,7 @@ class ItemDisplay: Fragment() {
 
     private val pokeDao: PokeDAO = App.database.pokeDao()
 
-    val itemID = arguments?.getString("id")
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +28,8 @@ class ItemDisplay: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val itemID = arguments?.getString("pokeID").toString()
+
         pokeDao.getItemById(itemID).observe(viewLifecycleOwner, Observer { itemValue ->
             itemName.text = itemValue.name
             itemFlavorText.text = itemValue.flavorTextEntry
@@ -35,5 +37,4 @@ class ItemDisplay: Fragment() {
 
         })
     }
-
 }

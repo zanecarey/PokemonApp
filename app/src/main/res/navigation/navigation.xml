@@ -83,7 +83,12 @@
     <fragment
         android:id="@+id/navigation_item_display"
         android:name="zane.carey.pokemonapp.ui.items.ItemDisplay"
-        android:label="@string/app_name"></fragment>
+        android:label="@string/app_name">
+        <argument
+            android:name="pokeID"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_move_display"

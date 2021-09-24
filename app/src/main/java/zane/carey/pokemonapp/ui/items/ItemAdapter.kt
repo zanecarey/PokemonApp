@@ -23,12 +23,10 @@ class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context:
         fun bindView(pokeItem: PokeItem) {
             itemView.itemName.text = pokeItem.name
             itemView.item_cardView.setOnClickListener {
-                var idBundle = bundleOf("id" to pokeItem.id)
+                var idBundle = bundleOf("pokeID" to pokeItem.id)
 
                 it.findNavController()
                     .navigate(R.id.action_navigation_poke_item_to_navigation_item_display, idBundle)
-
-
             }
             Glide.with(itemView.context)
                 .load(pokeItem.sprites?.get(0))
@@ -38,7 +36,7 @@ class ItemAdapter(private val pokeItemList: List<PokeItem>, private val context:
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(App.context).inflate(R.layout.item_list_view, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_list_view, parent, false)
 
         return ViewHolder(view)
     }
