@@ -22,6 +22,12 @@ class MoveViewModel: ViewModel() {
     }
 
     fun convertMove(move: Move): PokemonMove {
+
+        var effectChangeList = mutableListOf("-1")
+        if(move.effect_changes.isNotEmpty()){
+            effectChangeList.clear()
+            effectChangeList.add(move.effect_changes[0].effectEntries[0].effect)
+        }
         return PokemonMove(
             move.id,
             move.name,
@@ -32,7 +38,8 @@ class MoveViewModel: ViewModel() {
             move.power,
             move.damage_class.name,
             listOf(move.effect_entries[0].effect),
-            listOf(move.effect_changes[0].toString()),
+            //listOf(move.effect_changes[0].effectEntries[0].effect),
+            effectChangeList,
             move.generation.name.toString(),
             listOf(move.names[0].name),
             move.target.name,
@@ -42,7 +49,7 @@ class MoveViewModel: ViewModel() {
 
     fun testGetMove() {
         viewModelScope.launch(Dispatchers.IO) {
-            var returnedMove = getMove(0)
+            var returnedMove = getMove(1)
             pokeDao.insertMove(convertMove(returnedMove))
         }
     }

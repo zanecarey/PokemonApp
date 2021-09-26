@@ -44,6 +44,7 @@ class MoveFragment: Fragment() {
         val layoutManager = GridLayoutManager(context, 2)
         moveRecyclerView.layoutManager = layoutManager
 
+        moveViewModel.testGetMove()
         moveViewModel.getMoveList().observe(viewLifecycleOwner, Observer {
             val moves: List<PokemonMove> = it
             moveRecyclerView.adapter = MoveAdapter(moves, view.context)

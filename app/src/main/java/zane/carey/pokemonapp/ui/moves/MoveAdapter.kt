@@ -36,7 +36,7 @@ class MoveAdapter(private val moveList: List<PokemonMove>, private val context: 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(App.context).inflate(R.layout.item_list_view, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_list_view, parent, false)
 
         return MoveAdapter.ViewHolder(view)
     }
