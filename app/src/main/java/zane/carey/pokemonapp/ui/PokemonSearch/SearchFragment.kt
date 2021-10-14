@@ -43,8 +43,8 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.searchEntry.setOnClickListener{
-            view.searchEntry.text.clear()
+        view.searchEntry.setOnFocusChangeListener{
+            v, b -> if(b){view.searchEntry.text.clear()}
         }
         view.searchButton.setOnClickListener {
             val entry = view.searchEntry.text.toString()
