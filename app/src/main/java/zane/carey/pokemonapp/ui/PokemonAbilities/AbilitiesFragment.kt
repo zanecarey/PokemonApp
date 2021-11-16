@@ -49,7 +49,12 @@ class AbilitiesFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                abilitiesTextView.text = pokemon.abilities.toString().substring(1, pokemon.abilities.toString().length - 1).capitalize()
+                //chop up the ability list into chunks
+                val abilList = pokemon.abilities.toString().split(",").toTypedArray()
+                ability1TextView.text = abilList[0]
+                ability2TextView.text = abilList[1]
+                ability3TextView.text = abilList[2]
+//                ability1TextView.text = pokemon.abilities.toString().substring(1, pokemon.abilities.toString().length - 1).capitalize()
                 movesTextView.text = pokemon.moves.toString().substring(1, pokemon.moves.toString().length - 1).capitalize()
 
             }

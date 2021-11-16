@@ -8,6 +8,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.5703125" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/category_list_item.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_gen_filter.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_generation.xml" value="0.5541666666666667" />
@@ -24,6 +25,8 @@
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/item_list_view.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/poke_list_item.xml" value="0.33" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/region_list_view.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5703125" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.5703125" />
       </map>
     </option>
   </component>
