@@ -51,7 +51,7 @@ class AbilitiesFragment: Fragment() {
 
                 //chop up the ability list into chunks
                 val abilList = pokemon.abilities.toString().split(",").toTypedArray()
-                ability1TextView.text = abilList[0]
+                ability1TextView.text = abilList[0].substring(1, abilList[0].length).capitalize()
                 ability2TextView.text = abilList[1]
                 ability3TextView.text = abilList[2]
 //                ability1TextView.text = pokemon.abilities.toString().substring(1, pokemon.abilities.toString().length - 1).capitalize()
