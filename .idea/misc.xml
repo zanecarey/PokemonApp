@@ -14,7 +14,7 @@
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_generation.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_item_display.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_moves.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_abilities.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_abilities.xml" value="0.3184675246932056" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_bio.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_evolutions.xml" value="0.33" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_poke_search.xml" value="0.2056159420289855" />
@@ -23,6 +23,7 @@
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/fragment_viewpager.xml" value="0.22" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/item_generation.xml" value="0.3734375" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/item_list_view.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/move_list_item.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/poke_list_item.xml" value="0.33" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/layout/region_list_view.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/zanec/StudioProjects/PokeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5703125" />
@@ -35,5 +36,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5541666666666667" />
+      </ProjectState>
+    </option>
   </component>
 </project>
