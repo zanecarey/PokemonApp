@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_poke_abilities.*
-import kotlinx.android.synthetic.main.fragment_poke_stats.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import zane.carey.pokemonapp.R
 import zane.carey.pokemonapp.ui.PokemonStats.StatsFragment
@@ -45,6 +45,10 @@ class AbilitiesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val moveListRecyclerView = moveListRecyclerView
+        val layoutManager = GridLayoutManager(context, 1)
+        moveListRecyclerView.layoutManager = layoutManager
+
         val pokeID = arguments?.getString("id")
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
@@ -55,8 +59,8 @@ class AbilitiesFragment: Fragment() {
                 ability2TextView.text = abilList[1].capitalize()
                 ability3TextView.text = abilList[2].substring(0,abilList[2].length - 1).capitalize()
 //                ability1TextView.text = pokemon.abilities.toString().substring(1, pokemon.abilities.toString().length - 1).capitalize()
-                movesTextView.text = pokemon.moves.toString().substring(1, pokemon.moves.toString().length - 1).capitalize()
-
+                //movesTextView.text = pokemon.moves.toString().substring(1, pokemon.moves.toString().length - 1).capitalize()
+                moveListRecyclerView.adapter = MoveListAdapter(pokemon.moves, view.context)
             }
         })
     }
