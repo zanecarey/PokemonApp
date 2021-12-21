@@ -74,12 +74,15 @@ class PokemonViewModel(private val context: Context) : ViewModel() {
 
         //make list of abilities
         var abilityList = mutableListOf(pokemonResults.abilities[0].ability.name)
-//        for(i in 1..pokemonResults.abilities.size){
-//            abilityList.add(pokemonResults.abilities[i].ability.name)
-//        }
-        for(a in pokemonResults.abilities.indices){
-            abilityList.add(pokemonResults.abilities[a].ability.name)
+        if(pokemonResults.abilities.size > 1){
+            for(i in 1 until pokemonResults.abilities.size){
+                abilityList.add(pokemonResults.abilities[i].ability.name)
+            }
         }
+
+//        for(a in pokemonResults.abilities.indices){
+//            abilityList.add(pokemonResults.abilities[a].ability.name)
+//        }
 
         //make list of moves
         var moveList = mutableListOf(pokemonResults.moves[0].move.name)

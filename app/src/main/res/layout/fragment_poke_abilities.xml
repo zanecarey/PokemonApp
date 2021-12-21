@@ -46,13 +46,13 @@
                 android:text="@string/pokeAbilitiesList"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/ability3TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/pokeAbilitiesList"
-                android:textSize="16sp" />
+<!--            <TextView-->
+<!--                android:id="@+id/ability3TextView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/pokeAbilitiesList"-->
+<!--                android:textSize="16sp" />-->
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
