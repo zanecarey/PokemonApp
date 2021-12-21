@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_poke_abilities.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import zane.carey.pokemonapp.R
@@ -46,7 +47,9 @@ class AbilitiesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val moveListRecyclerView = moveListRecyclerView
-        val layoutManager = GridLayoutManager(context, 1)
+        val layoutManager = LinearLayoutManager(context)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        layoutManager.isAutoMeasureEnabled
         moveListRecyclerView.layoutManager = layoutManager
 
         val pokeID = arguments?.getString("id")
