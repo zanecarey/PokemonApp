@@ -39,7 +39,7 @@
                         android:layout_weight="1"
                         android:text="@string/hp"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/healthTextView"
@@ -76,7 +76,7 @@
                         android:layout_weight="1"
                         android:text="@string/attack"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/attackTextView"
@@ -113,7 +113,7 @@
                         android:layout_weight="1"
                         android:text="@string/defense"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/defenseTextView"
@@ -150,7 +150,7 @@
                         android:layout_weight="1"
                         android:text="@string/special_attack"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/spAttackTextView"
@@ -187,7 +187,7 @@
                         android:layout_weight="1"
                         android:text="@string/special_defense"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/spDefenceTextView"
@@ -224,7 +224,7 @@
                         android:layout_weight="1"
                         android:text="@string/speed"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/speedTextView"

@@ -51,7 +51,7 @@ class BioFragment: Fragment() {
         vpViewModel.getById(pokeID).observe(viewLifecycleOwner, Observer { pokemonValue ->
             pokemonValue?.let { pokemon ->
 
-                bioTextView.text = pokemon.flavorText
+                bioTextView.text = pokemon.flavorText?.replace("\\n".toRegex(), "")
                 //typeTextView.text = pokemon.type.toString().substring(1, pokemon.type.toString().length - 1).capitalize()
                 typeTextView.text = pokemon.type!![0].type.name.capitalize()
                 weightTextView.text = pokemon.weight.toString()
