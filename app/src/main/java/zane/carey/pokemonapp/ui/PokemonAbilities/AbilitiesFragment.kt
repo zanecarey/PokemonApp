@@ -58,6 +58,8 @@ class AbilitiesFragment: Fragment() {
 
                 //chop up the ability list into chunks
                 val abilList = pokemon.abilities.toString().split(",").toTypedArray()
+
+                //Remove brackets from string, capitalize the ability names
                 ability1TextView.text = abilList[0].substring(1, abilList[0].length).replaceFirst(abilList[0].get(1), abilList[0].get(1).toUpperCase())
                 ability2TextView.text = abilList[1].substring(0,abilList[1].length - 1).replaceFirst(abilList[1][1], abilList[1].get(1).toUpperCase())
                 //ability3TextView.text = abilList[2].substring(0,abilList[2].length - 1).capitalize()

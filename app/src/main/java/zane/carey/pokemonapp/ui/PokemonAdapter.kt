@@ -1,6 +1,7 @@
 package zane.carey.pokemonapp.ui
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,10 +37,12 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
                 itemView.type2.visibility = View.INVISIBLE
             }
 
+            //Change card color based on the pokemon's type
             itemView.poke_item_cardView.setCardBackgroundColor(ColorConverter(context).getColor(item.type?.get(0)!!.type.name))
+            itemView.cardView_RelativeLayout.setBackgroundColor(ColorConverter(context).getLightColor(item.type?.get(0)!!.type.name))
 
             Glide.with(itemView.context)
-                .load(item.sprites?.get(0))
+                .load(item.sprites?.get(1))
                 .placeholder(android.R.color.transparent)
                 .into(itemView.pokemonImage)
         }
