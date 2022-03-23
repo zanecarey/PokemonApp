@@ -68,17 +68,22 @@ class StatsFragment: Fragment() {
                 val pbColor = ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name)
 
                 //HP
-                val progressDrawable1: Drawable = progressBarHP.progressDrawable.mutate()
-                progressDrawable1.setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
-                progressBarHP.progressDrawable = progressDrawable1
+                progressBarHP.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
 
                 //Attack
-                val progressDrawable2: Drawable = progressBarAttack.progressDrawable.mutate()
-                progressDrawable2.setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
-                progressBarAttack.progressDrawable = progressDrawable2
+                progressBarAttack.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
 
                 //Defense
                 progressBarDef.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
+
+                //Sp Atk
+                progressBarSpAtk.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
+
+                //Sp Def
+                progressBarSpDef.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
+
+                //Speed
+                progressBarSpeed.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
             }
         })
     }

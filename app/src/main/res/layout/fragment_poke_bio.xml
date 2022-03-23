@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bioCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:elevation="8dp"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/grey"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="2dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/bioCardView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey"
+            android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:elevation="8dp"
-            android:focusable="true">
+            android:focusable="true"
+            app:cardCornerRadius="16dp">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="8dp"
                 android:background="@color/white"
+                android:orientation="vertical"
                 android:padding="4dp">
 
                 <LinearLayout
@@ -44,11 +55,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/pokemon_type"
-
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+
+                        android:paddingEnd="8dp"
+                        android:text="@string/pokemon_type"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -69,10 +80,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/base_xp"
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+                        android:paddingEnd="8dp"
+                        android:text="@string/base_xp"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,10 +104,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/pokemon_weight"
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+                        android:paddingEnd="8dp"
+                        android:text="@string/pokemon_weight"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,13 +128,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Gender Rate"
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+                        android:paddingEnd="8dp"
+                        android:text="Gender Rate"
+                        android:textSize="16sp" />
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -142,12 +154,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/pokemon_height"
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+                        android:paddingEnd="8dp"
+                        android:text="@string/pokemon_height"
+                        android:textSize="16sp" />
                 </LinearLayout>
+
+
             </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -155,17 +170,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey"
+            android:layout_margin="8dp"
             android:elevation="8dp"
             android:focusable="true"
-            android:padding="8dp">
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_margin="8dp"
                 android:background="@color/white"
-                android:layout_margin="8dp">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -177,8 +192,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/pokemon_flavor_text"
                         android:gravity="center"
+                        android:text="@string/pokemon_flavor_text"
                         android:textSize="32sp" />
 
                     <TextView
@@ -186,19 +201,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/pokemon_flavor_text"
-                        android:textSize="16sp"
                         android:paddingStart="8dp"
-                        android:paddingEnd="8dp"/>
+                        android:paddingEnd="8dp"
+                        android:text="@string/pokemon_flavor_text"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-
-
-
-
-
-    </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

@@ -20,31 +20,31 @@
 
             app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom|end"
-                app:elevation="0dp"
-                app:layout_collapseMode="pin">
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                android:layout_gravity="bottom|end"-->
+<!--                app:elevation="0dp"-->
+<!--                app:layout_collapseMode="pin">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="#000"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/app_name"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textSize="22sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/test_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="#000"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </androidx.appcompat.widget.Toolbar>
+<!--                <TextView-->
+<!--                    android:id="@+id/test_textView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/app_name"-->
+<!--                    android:textColor="#000"-->
+<!--                    android:textSize="22sp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </androidx.appcompat.widget.Toolbar>-->
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:layout_gravity="bottom|end"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
