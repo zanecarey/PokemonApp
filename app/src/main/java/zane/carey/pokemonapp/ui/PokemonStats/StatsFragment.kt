@@ -1,17 +1,19 @@
 package zane.carey.pokemonapp.ui.PokemonStats
 
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_poke_stats.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import zane.carey.pokemonapp.R
-import zane.carey.pokemonapp.ui.PokemonViewModel
 import zane.carey.pokemonapp.ui.ViewPager.ViewPagerViewModel
+import zane.carey.pokemonapp.util.ColorConverter
 
 
 class StatsFragment: Fragment() {
@@ -61,6 +63,22 @@ class StatsFragment: Fragment() {
                 progressBarSpAtk.progress = pokemon.spAttack ?: 0
                 progressBarSpDef.progress = pokemon.spDefense ?: 0
                 progressBarSpeed.progress = pokemon.speed ?: 0
+
+                //change progress bar color to match the type color
+                val pbColor = ColorConverter(view.context).getColor(pokemon.type?.get(0)?.type?.name)
+
+                //HP
+                val progressDrawable1: Drawable = progressBarHP.progressDrawable.mutate()
+                progressDrawable1.setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
+                progressBarHP.progressDrawable = progressDrawable1
+
+                //Attack
+                val progressDrawable2: Drawable = progressBarAttack.progressDrawable.mutate()
+                progressDrawable2.setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
+                progressBarAttack.progressDrawable = progressDrawable2
+
+                //Defense
+                progressBarDef.progressDrawable.mutate().setColorFilter(pbColor, PorterDuff.Mode.SRC_IN)
             }
         })
     }
