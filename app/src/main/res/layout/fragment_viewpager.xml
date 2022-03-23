@@ -39,10 +39,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:textSize="36sp"
-                        android:textStyle="bold"
+                        android:text="PokemonName"
                         android:textColor="#FFF"
-                        android:text="PokemonName" />
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/IDTextView"
@@ -70,8 +70,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentBottom="true"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp"
                             android:textColor="#FFF"
                             android:textSize="14sp" />
                     </androidx.cardview.widget.CardView>
@@ -91,8 +91,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
 
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp"
                             android:textColor="#fff"
                             android:textSize="14sp" />
                     </androidx.cardview.widget.CardView>
@@ -120,8 +120,9 @@
                     android:layout_height="?attr/actionBarSize"
                     app:tabGravity="fill"
                     app:tabMode="fixed"
-                    app:tabTextColor="@android:color/black"
-                    app:tabSelectedTextColor="#FFEB3B">
+                    app:tabTextColor="@android:color/white"
+                    app:tabSelectedTextColor="#FFEB3B"
+                    app:tabBackground="@android:color/black">
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
