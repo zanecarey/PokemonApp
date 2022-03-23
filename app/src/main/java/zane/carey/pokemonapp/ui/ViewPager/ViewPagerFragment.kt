@@ -90,8 +90,10 @@ class ViewPagerFragment : Fragment() {
                     type1CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
                     if(pokemon.type!!.size >= 2){
                         type2CardView.setCardBackgroundColor(ColorConverter(view.context).getLightColor(pokemon.type?.get(0)?.type?.name))
+                        textViewType2.text = pokemon.type!![1].type.name
                     } else {
-                        type2CardView.visibility = View.GONE
+                        //type2CardView.visibility = View.GONE
+                        textViewType2.visibility = View.GONE
                     }
                     pokemonNameTextView.text = pokemon.name?.capitalize()
                     IDTextView.text = "#" + pokemon.id

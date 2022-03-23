@@ -41,6 +41,7 @@ class PokemonAdapter(private val pokeList: List<Pokemon>, private val context: C
             itemView.poke_item_cardView.setCardBackgroundColor(ColorConverter(context).getColor(item.type?.get(0)!!.type.name))
             itemView.cardView_RelativeLayout.setBackgroundColor(ColorConverter(context).getLightColor(item.type?.get(0)!!.type.name))
 
+            //Load in the sprite image
             Glide.with(itemView.context)
                 .load(item.sprites?.get(1))
                 .placeholder(android.R.color.transparent)

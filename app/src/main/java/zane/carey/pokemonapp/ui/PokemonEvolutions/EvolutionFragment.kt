@@ -65,7 +65,7 @@ class EvolutionFragment: Fragment() {
                 vpViewModel.getByName(baseEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
                     evoValue?.let { poke ->
                         Glide.with(this)
-                            .load(poke.sprites?.get(0))
+                            .load(poke.sprites?.get(1))
                             .placeholder(android.R.color.transparent)
                             .into(baseEvoImage)
 
@@ -82,7 +82,7 @@ class EvolutionFragment: Fragment() {
                 vpViewModel.getByName(firstEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
                     evoValue?.let { poke ->
                         Glide.with(this)
-                            .load(poke.sprites?.get(0))
+                            .load(poke.sprites?.get(1))
                             .placeholder(android.R.color.transparent)
                             .into(firstEvoImage)
 
@@ -99,7 +99,7 @@ class EvolutionFragment: Fragment() {
                 vpViewModel.getByName(secondEvoName?.toLowerCase()).observe(viewLifecycleOwner, Observer { evoValue ->
                     evoValue?.let { poke ->
                         Glide.with(this)
-                            .load(poke.sprites?.get(0))
+                            .load(poke.sprites?.get(1))
                             .placeholder(android.R.color.transparent)
                             .into(secondEvoImage)
 
