@@ -8,7 +8,7 @@
         android:id="@+id/poke_item_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
+        android:layout_margin="4dp"
         android:clickable="true"
         android:elevation="16dp"
         android:focusable="true"
